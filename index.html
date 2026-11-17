@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Français 8 Repetition</title>
+<meta name="description" content="Wiederholung Französisch Klasse 8: Objektpronomen, Komparativ, Superlativ mit Spickzettel und Übungen.">
+<style>
+:root{
+  --bg:#f5f6fb;--card:#ffffff;--ink:#1b2133;--muted:#5a6379;--line:#dfe3ee;
+  --blue:#1d4ed8;--red:#d1344a;--green:#15803d;--ok-bg:#e6f5ea;--bad-bg:#fcebee;--note-bg:#fff7e0;
+  --obj:#1d4ed8;--comp:#c2410c;--sup:#6d28d9;--on-c:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#10131c;--card:#192032;--ink:#e8ebf4;--muted:#a3adc4;--line:#2b3550;
+    --blue:#7ea2ff;--red:#ff7a8c;--green:#5fd18a;--ok-bg:#16301f;--bad-bg:#3a1b22;--note-bg:#2e2a14;
+    --obj:#7ea6ff;--comp:#ffa066;--sup:#b79bff;--on-c:#0b1020;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+.flag{height:6px;background:linear-gradient(90deg,#1d4ed8 0 33.3%,#ffffff 33.3% 66.6%,#d1344a 66.6%);border-bottom:1px solid var(--line)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 48px}
+header.top{padding:20px 0 8px}
+h1{margin:0;font-size:1.6rem;line-height:1.2}
+.sub{margin:4px 0 0;color:var(--muted)}
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 20px}
+nav.tabs a{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600}
+nav.tabs a[aria-current="page"]{background:var(--blue);border-color:var(--blue);color:var(--on-c)}
+@media (prefers-color-scheme:dark){nav.tabs a[aria-current="page"]{color:#0b1020}}
+h2{font-size:1.3rem;margin:0 0 12px}
+h3{font-size:1.05rem;margin:18px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+[data-topic="obj"]{--c:var(--obj)}
+[data-topic="comp"]{--c:var(--comp)}
+[data-topic="sup"]{--c:var(--sup)}
+.topic-card{border-top:5px solid var(--c)}
+.topic-card h3{margin-top:0;color:var(--c)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button,.btn{font:inherit;cursor:pointer}
+.btn{padding:9px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:600}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--on-c)}
+@media (prefers-color-scheme:dark){.btn.primary{color:#0b1020}}
+.btn:focus-visible,a:focus-visible,input:focus-visible,.opt:focus-visible,.chip:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.progress{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:10px 0 4px}
+.progress>div{height:100%;background:var(--c,var(--blue))}
+.small{font-size:.9rem;color:var(--muted)}
+table.tbl{border-collapse:collapse;width:100%;margin:8px 0 12px;font-size:.97rem}
+.tbl th,.tbl td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+.tbl th{background:color-mix(in srgb,var(--c,var(--blue)) 14%,var(--card))}
+.scroll{overflow-x:auto}
+.ex{margin:4px 0;padding-left:12px;border-left:3px solid var(--c,var(--blue))}
+.ex span{color:var(--muted);font-size:.93em}
+.rule{margin:6px 0}
+.note{background:var(--note-bg);border-radius:10px;padding:10px 12px;margin:10px 0}
+.bad{color:var(--red);font-weight:600}
+.good{color:var(--green);font-weight:600}
+.cheat h2{color:var(--c);border-bottom:3px solid var(--c);padding-bottom:4px}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+/* Üben */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px;border:0;padding:0}
+fieldset.chips legend{font-weight:600;margin-bottom:4px;padding:0}
+.chip{padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--on-c);font-weight:600}
+@media (prefers-color-scheme:dark){.chip[aria-pressed="true"]{color:#0b1020}}
+.q-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.q-head .count{margin-left:auto;color:var(--muted);font-size:.9rem}
+.tag{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--c);color:var(--on-c);font-size:.82rem;font-weight:600}
+.tag.bonus{background:var(--note-bg);color:var(--ink);border:1px solid var(--line)}
+.question{font-size:1.2rem;margin:14px 0}
+.blank{display:inline-block;min-width:3.2em;border-bottom:3px solid var(--muted);margin:0 4px}
+input.gap{font:inherit;font-size:1.1rem;width:9em;padding:3px 8px;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);margin:0 4px}
+.chars{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.chars button{min-width:2.2em;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+.opts{display:grid;gap:8px;margin-top:8px}
+.opt{text-align:left;padding:11px 14px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+.opt:hover:not(:disabled){border-color:var(--blue)}
+.opt.correct{background:var(--ok-bg);border-color:var(--green)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--red)}
+.fb{margin-top:14px;padding:12px 14px;border-radius:10px}
+.fb.ok{background:var(--ok-bg)}
+.fb.no{background:var(--bad-bg)}
+.fb.info{background:var(--note-bg)}
+.fb p{margin:4px 0}
+.score{font-size:2.2rem;font-weight:800;margin:4px 0}
+.err-item{padding:10px 0;border-top:1px solid var(--line)}
+.err-item:first-child{border-top:0}
+footer{margin-top:28px;color:var(--muted);font-size:.88rem}
+footer button{background:none;border:0;color:var(--muted);text-decoration:underline;padding:0}
+@media print{
+  .flag,nav.tabs,.no-print,footer,.jump{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  .card{border:0;padding:0}
+  .cheat h2{break-after:avoid}
+  .tbl th,.tbl td{border-color:#999}
+}
+</style>
+</head>
+<body>
+<div class="flag" aria-hidden="true"></div>
+<div class="wrap">
+<header class="top">
+  <h1>Français – Klasse 8</h1>
+  <p class="sub">Wiederholung: Objektpronomen · Komparativ · Superlativ</p>
+</header>
+
+<nav class="tabs" aria-label="Bereiche">
+  <a id="nav-home" href="#home">Übersicht</a>
+  <a id="nav-spickzettel" href="#spickzettel">Spickzettel</a>
+  <a id="nav-ueben" href="#ueben">Üben</a>
+</nav>
+
+<main>
+<!-- ÜBERSICHT -->
+<section id="view-home">
+  <div class="card">
+    <h2>Bonjour !</h2>
+    <p>So wiederholst du am besten: Lies zuerst den <strong>Spickzettel</strong>, übe dann mit den Aufgaben. Richtig gelöste Aufgaben werden als <em>gemeistert</em> gezählt, Fehler kannst du direkt wiederholen.</p>
+  </div>
+  <div class="grid" id="topic-cards"></div>
+  <div class="btns">
+    <button class="btn primary" id="home-all">Alles gemischt üben</button>
+    <a class="btn" href="#spickzettel">Zum Spickzettel</a>
+  </div>
+</section>
+
+<!-- SPICKZETTEL -->
+<section id="view-spickzettel" hidden>
+  <div class="jump no-print">
+    <button class="btn" data-jump="cs-obj">Objektpronomen</button>
+    <button class="btn" data-jump="cs-comp">Komparativ</button>
+    <button class="btn" data-jump="cs-sup">Superlativ</button>
+    <button class="btn" id="print-btn">🖨 Drucken</button>
+  </div>
+
+  <article class="card cheat" id="cs-obj" data-topic="obj">
+    <h2>Les pronoms objets – Objektpronomen</h2>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Person</th><th>direkt (wen? was?)</th><th>indirekt (wem?)</th></tr></thead>
+      <tbody lang="fr">
+        <tr><td lang="de">ich</td><td>me (m')</td><td>me (m')</td></tr>
+        <tr><td lang="de">du</td><td>te (t')</td><td>te (t')</td></tr>
+        <tr><td lang="de">er / sie / es</td><td>le (m) · la (f) · l' (vor Vokal)</td><td>lui</td></tr>
+        <tr><td lang="de">wir</td><td>nous</td><td>nous</td></tr>
+        <tr><td lang="de">ihr / Sie</td><td>vous</td><td>vous</td></tr>
+        <tr><td lang="de">sie (Plural)</td><td>les</td><td>leur</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ex" lang="fr"><strong>Je vois Paul.</strong> → Je <strong>le</strong> vois. <span lang="de">Ich sehe ihn.</span></p>
+    <p class="ex" lang="fr"><strong>Je vois Marie.</strong> → Je <strong>la</strong> vois. <span lang="de">Ich sehe sie.</span></p>
+    <p class="ex" lang="fr"><strong>Je vois les enfants.</strong> → Je <strong>les</strong> vois. <span lang="de">Ich sehe sie.</span></p>
+    <p class="ex" lang="fr"><strong>Je parle à Paul / à Marie.</strong> → Je <strong>lui</strong> parle. <span lang="de">Ich spreche mit ihm / ihr.</span></p>
+    <p class="ex" lang="fr"><strong>Je parle à mes amis.</strong> → Je <strong>leur</strong> parle. <span lang="de">Ich spreche mit ihnen.</span></p>
+
+    <h3>Wo steht das Pronomen?</h3>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Situation</th><th>Regel</th><th>Beispiel</th></tr></thead>
+      <tbody>
+        <tr><td>normaler Satz</td><td>vor dem konjugierten Verb</td><td lang="fr">Je le vois.</td></tr>
+        <tr><td>Verneinung</td><td><span lang="fr">ne</span> + Pronomen + Verb + <span lang="fr">pas</span></td><td lang="fr">Je ne le vois pas.</td></tr>
+        <tr><td>Passé composé</td><td>vor <span lang="fr">avoir</span> / <span lang="fr">être</span></td><td lang="fr">Je l'ai vu. · Je ne l'ai pas vu.</td></tr>
+        <tr><td>mit Infinitiv</td><td>vor dem Infinitiv</td><td lang="fr">Je veux le voir.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><strong>Tipp:</strong> Nach Verben mit <span lang="fr">à</span> + Person (<span lang="fr">parler à, téléphoner à, écrire à, répondre à, donner à, dire à</span>) steht <strong lang="fr">lui</strong> / <strong lang="fr">leur</strong>. Diese beiden Pronomen sind für Mädchen und Jungen gleich.</div>
+    <div class="note">⭐ <strong>Bonus:</strong> Im Passé composé richtet sich das <em>participe passé</em> nach <span lang="fr">le / la / les</span>: <span lang="fr">Je l'ai vu<strong>e</strong>. · Je les ai vu<strong>s</strong>.</span></div>
+  </article>
+
+  <article class="card cheat" id="cs-comp" data-topic="comp">
+    <h2>Le comparatif – Komparativ</h2>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th></th><th>Adjektiv / Adverb</th><th>Nomen</th><th>Verb</th></tr></thead>
+      <tbody lang="fr">
+        <tr><td>+ mehr</td><td>plus + <i>adj.</i> + que</td><td>plus de + <i>nom</i> + que</td><td><i>verbe</i> + plus que</td></tr>
+        <tr><td>= gleich</td><td>aussi + <i>adj.</i> + que</td><td>autant de + <i>nom</i> + que</td><td><i>verbe</i> + autant que</td></tr>
+        <tr><td>− weniger</td><td>moins + <i>adj.</i> + que</td><td>moins de + <i>nom</i> + que</td><td><i>verbe</i> + moins que</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ex" lang="fr">Léa est <strong>plus grande que</strong> Tom. <span lang="de">Léa ist größer als Tom.</span></p>
+    <p class="ex" lang="fr">Il court <strong>moins vite que</strong> moi. <span lang="de">Er läuft langsamer als ich.</span></p>
+    <p class="ex" lang="fr">J'ai <strong>autant de</strong> livres <strong>que</strong> toi. <span lang="de">Ich habe genauso viele Bücher wie du.</span></p>
+    <p class="ex" lang="fr">Elle travaille <strong>plus que</strong> son frère. <span lang="de">Sie arbeitet mehr als ihr Bruder.</span></p>
+    <div class="note"><strong>Beachte:</strong> Das Adjektiv richtet sich nach dem Bezugswort: <span lang="fr">Les voitures sont plus chères que les vélos.</span><br>Nach <span lang="fr">que</span> steht das <em>betonte</em> Pronomen: <span lang="fr">moi, toi, lui, elle, nous, vous, eux, elles</span>.</div>
+
+    <h3>Unregelmäßig</h3>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Grundform</th><th>Komparativ</th><th>Aber</th></tr></thead>
+      <tbody lang="fr">
+        <tr><td>bon (gut)</td><td><strong>meilleur(e)(s)</strong></td><td>aussi bon · moins bon</td></tr>
+        <tr><td>bien (gut, Adverb)</td><td><strong>mieux</strong></td><td>aussi bien · moins bien</td></tr>
+        <tr><td>mauvais (schlecht)</td><td><strong>pire</strong> / plus mauvais</td><td></td></tr>
+        <tr><td>beaucoup (viel)</td><td><strong>plus</strong></td><td></td></tr>
+        <tr><td>peu (wenig)</td><td><strong>moins</strong></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <p class="rule"><span class="bad">✗</span> <span lang="fr">plus bon</span> &nbsp; <span class="bad">✗</span> <span lang="fr">plus bien</span> &nbsp; <span class="good">✓</span> <span lang="fr">meilleur</span> · <span lang="fr">mieux</span></p>
+  </article>
+
+  <article class="card cheat" id="cs-sup" data-topic="sup">
+    <h2>Le superlatif – Superlativ</h2>
+    <p class="rule"><strong lang="fr">le / la / les + plus / moins + Adjektiv + de</strong> <span class="small">(Artikel passt zum Bezugswort)</span></p>
+    <p class="ex" lang="fr">C'est <strong>la plus grande</strong> ville <strong>de</strong> France. <span lang="de">Das ist die größte Stadt Frankreichs.</span></p>
+    <p class="ex" lang="fr">Tom est <strong>le plus petit de</strong> la classe. <span lang="de">Tom ist der Kleinste in der Klasse.</span></p>
+    <p class="rule">Im Superlativ heißt „in" fast immer <strong lang="fr">de</strong>, nicht <span lang="fr">dans</span>.</p>
+
+    <h3>Stellung des Adjektivs</h3>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Adjektiv steht …</th><th>Superlativ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>nach</strong> dem Nomen (<span lang="fr">intéressant, rapide, cher …</span>)</td><td lang="fr">le roman <strong>le plus</strong> intéressant → <em>Artikel zweimal!</em></td></tr>
+        <tr><td><strong>vor</strong> dem Nomen (<span lang="fr">beau, joli, bon, mauvais, grand, petit, jeune, vieux, nouveau</span>)</td><td lang="fr">la <strong>plus</strong> belle maison · le meilleur film</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Adverb und Unregelmäßiges</h3>
+    <p class="ex" lang="fr">C'est Léa qui court <strong>le plus vite</strong>. <span lang="de">Léa läuft am schnellsten. (<em>le</em> bleibt unverändert)</span></p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Grundform</th><th>Superlativ</th></tr></thead>
+      <tbody lang="fr">
+        <tr><td>bon</td><td><strong>le / la / les meilleur(e)(s)</strong> – Ce sont mes meilleurs amis.</td></tr>
+        <tr><td>bien</td><td><strong>le mieux</strong> – Elle chante le mieux.</td></tr>
+        <tr><td>mauvais</td><td><strong>le pire</strong> / le plus mauvais</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="note"><strong>Vergleich:</strong> <span lang="fr">plus grand <strong>que</strong> Tom</span> (Komparativ, mit <em>que</em>) – <span lang="fr"><strong>le</strong> plus grand <strong>de</strong> la classe</span> (Superlativ, mit Artikel und <em>de</em>).</div>
+  </article>
+</section>
+
+<!-- ÜBEN -->
+<section id="view-ueben" hidden>
+  <div class="card" id="setup">
+    <h2>Üben</h2>
+    <fieldset class="chips" id="chips-topic">
+      <legend>Thema</legend>
+    </fieldset>
+    <fieldset class="chips" id="chips-count">
+      <legend>Anzahl der Aufgaben</legend>
+    </fieldset>
+    <button class="btn primary" id="start-btn">Los geht's</button>
+  </div>
+  <div class="card" id="quiz" hidden></div>
+</section>
+</main>
+
+<footer>
+  Läuft komplett im Browser, es werden keine Daten gesendet. Dein Fortschritt wird nur lokal auf diesem Gerät gespeichert.
+  <button id="reset-btn" type="button">Fortschritt zurücksetzen</button>
+</footer>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ---------- Daten ---------- */
+const TOPICS={
+  obj:{name:'Objektpronomen',teaser:'Wen oder wem? le, la, les, lui, leur – und wo sie im Satz stehen.'},
+  comp:{name:'Komparativ',teaser:'plus … que, aussi … que, moins … que – und meilleur statt plus bon.'},
+  sup:{name:'Superlativ',teaser:'le plus, la moins, les meilleurs – mit der richtigen Stellung.'}
+};
+
+/* type "mc": opts (Array), a = Index der richtigen Option
+   type "gap": a = Array akzeptierter Antworten
+   bonus:true markiert Zusatzaufgaben; e = Erklärung */
+const EX=[
+ // Objektpronomen
+ {t:'obj',type:'mc',q:"Je vois Marie. → Je ___ vois.",opts:["la","le","lui"],a:0,e:"Marie ist direktes Objekt (wen?) und weiblich → la."},
+ {t:'obj',type:'gap',q:"Tu aimes ces films ? – Oui, je ___ aime.",a:["les"],e:"Plural, direktes Objekt → les."},
+ {t:'obj',type:'mc',q:"Il parle à Paul. → Il ___ parle.",opts:["le","lui","leur"],a:1,e:"parler à qn ist ein indirektes Objekt (wem?) → lui."},
+ {t:'obj',type:'gap',q:"Nous écrivons à nos amis. → Nous ___ écrivons.",a:["leur"],e:"à + Personen im Plural → leur (für Mädchen und Jungen gleich)."},
+ {t:'obj',type:'gap',q:"Elle regarde le garçon. → Elle ___ regarde.",a:["le"],e:"Direktes Objekt, männlich, Singular → le."},
+ {t:'obj',type:'gap',q:"Je prends ce livre. → Je ne ___ prends pas.",a:["le"],e:"Verneinung: ne + Pronomen + Verb + pas."},
+ {t:'obj',type:'mc',q:"Je donne le cadeau à ma mère. → Je ___ donne le cadeau.",opts:["la","lui","leur"],a:1,e:"à ma mère ist indirekt, Singular → lui (auch für weibliche Personen)."},
+ {t:'obj',type:'gap',q:"Tu as vu Sophie ? – Oui, je ___ ai vue.",a:["l'"],e:"Vor einem Vokal wird la zu l'. Das participe passé „vue“ bekommt ein -e wegen la (Sophie)."},
+ {t:'obj',type:'gap',bonus:true,q:"Tu as vu tes cousins ? – Oui, je les ai ___.",a:["vus"],e:"Das participe passé richtet sich nach dem direkten Objekt les: vu + s."},
+ {t:'obj',type:'mc',q:"Je veux voir Paul. →",opts:["Je veux le voir.","Je le veux voir.","Je veux lui voir."],a:0,e:"Mit Infinitiv steht das Pronomen vor dem Infinitiv. voir + Person = direkt → le."},
+ {t:'obj',type:'gap',q:"Il ne téléphone pas à ses parents. → Il ne ___ téléphone pas.",a:["leur"],e:"téléphoner à qn → indirekt, Plural → leur."},
+ {t:'obj',type:'mc',q:"Marie sieht uns nicht.",opts:["Marie ne nous voit pas.","Marie nous ne voit pas.","Marie ne voit pas nous."],a:0,e:"ne + Pronomen + Verb + pas."},
+ {t:'obj',type:'mc',q:"Je cherche mes clés. → Je ___ cherche.",opts:["les","leur","lui"],a:0,e:"chercher qc: direktes Objekt, Plural → les."},
+ {t:'obj',type:'gap',q:"Léa donne un livre à Luc et à Max. → Léa ___ donne un livre.",a:["leur"],e:"à Luc et à Max = indirekt, Plural → leur."},
+
+ // Komparativ
+ {t:'comp',type:'mc',q:"Paul (1,80 m) est ___ Marc (1,70 m).",opts:["plus grand que","aussi grand que","moins grand que"],a:0,e:"Paul ist größer → plus + Adjektiv + que."},
+ {t:'comp',type:'mc',q:"Ma sœur et moi, nous avons 14 ans. Elle est ___ âgée que moi.",opts:["aussi","plus","moins"],a:0,e:"Gleiches Alter → aussi … que."},
+ {t:'comp',type:'gap',q:"Cette pizza est ___ que celle-là. (bon, mehr)",a:["meilleure"],e:"bon → meilleur. Pizza ist weiblich → meilleure."},
+ {t:'comp',type:'gap',q:"Il joue ___ que moi. (bien, mehr)",a:["mieux"],e:"bien ist ein Adverb → mieux."},
+ {t:'comp',type:'mc',q:"Mein Bruder ist kleiner als ich.",opts:["Mon frère est plus petit que moi.","Mon frère est plus petit que je.","Mon frère est plus petit comme moi."],a:0,e:"Nach que steht das betonte Pronomen: moi."},
+ {t:'comp',type:'mc',q:"Je mange ___ fruits que toi. (gleich viele)",opts:["autant de","aussi de","autant des"],a:0,e:"Bei Nomen: autant de + Nomen + que."},
+ {t:'comp',type:'mc',q:"Il y a ___ élèves dans ma classe que dans ta classe. (mehr)",opts:["plus d'","plus de","plus que"],a:0,e:"plus de + Nomen; vor Vokal wird de zu d' (plus d'élèves)."},
+ {t:'comp',type:'gap',q:"Ces pommes sont ___ que ces poires. (bon, mehr)",a:["meilleures"],e:"bon → meilleur, Plural und weiblich → meilleures."},
+ {t:'comp',type:'gap',q:"Le film est ___ que le livre. (mauvais, mehr)",a:["pire","plus mauvais"],e:"mauvais → pire (oder: plus mauvais)."},
+ {t:'comp',type:'mc',q:"Les voitures sont ___ que les vélos.",opts:["plus chères","plus cher","plus chers"],a:0,e:"Das Adjektiv richtet sich nach voitures (weiblich, Plural)."},
+ {t:'comp',type:'mc',q:"Welcher Satz ist richtig?",opts:["Ce gâteau est meilleur que l'autre.","Ce gâteau est plus bon que l'autre.","Ce gâteau est plus meilleur que l'autre."],a:0,e:"„plus bon“ gibt es nicht, es heißt meilleur."},
+ {t:'comp',type:'gap',q:"Les chats dorment ___ que les chiens. (mehr)",a:["plus"],e:"Beim Verb steht plus que direkt nach dem Verb."},
+
+ // Superlativ
+ {t:'sup',type:'gap',q:"Paris est la ___ grande ville de France.",a:["plus"],e:"Superlativ: la plus + Adjektiv."},
+ {t:'sup',type:'mc',q:"C'est le ___ élève de la classe. (bon)",opts:["meilleur","plus bon","plus meilleur"],a:0,e:"bon → le meilleur."},
+ {t:'sup',type:'gap',q:"Elle chante ___ de tous. (bien, am besten)",a:["le mieux"],e:"Adverb bien → le mieux."},
+ {t:'sup',type:'mc',q:"Das ist das teuerste Kleid.",opts:["C'est la robe la plus chère.","C'est la plus chère robe.","C'est la robe plus chère."],a:0,e:"cher steht nach dem Nomen → Artikel zweimal: la robe la plus chère."},
+ {t:'sup',type:'mc',q:"Tom est le plus petit ___ la classe.",opts:["de","dans","en"],a:0,e:"Im Superlativ steht de (nicht dans)."},
+ {t:'sup',type:'gap',q:"Ce sont ___ plus belles fleurs du jardin.",a:["les"],e:"fleurs ist Plural → les plus belles."},
+ {t:'sup',type:'mc',q:"Léa est ___ rapide.",opts:["la plus","le plus","plus la"],a:0,e:"Léa ist weiblich → la plus rapide."},
+ {t:'sup',type:'gap',q:"Ce sont les ___ glaces de la ville. (bon)",a:["meilleures"],e:"bon → les meilleures (glaces ist weiblich Plural)."},
+ {t:'sup',type:'gap',q:"Mon frère est le ___ grand de la famille. (am wenigsten)",a:["moins"],e:"le moins + Adjektiv = am wenigsten …"},
+ {t:'sup',type:'mc',q:"der interessanteste Roman",opts:["le roman le plus intéressant","le plus intéressant roman","le roman plus intéressant"],a:0,e:"intéressant steht nach dem Nomen → Artikel wiederholen."},
+ {t:'sup',type:'gap',q:"C'est Léa qui court ___ vite. (am schnellsten)",a:["le plus"],e:"Beim Adverb bleibt le unverändert: le plus vite."},
+ {t:'sup',type:'mc',q:"Ce sont mes ___ amis.",opts:["meilleurs","plus bons","mieux"],a:0,e:"bon → meilleur; steht hier vor dem Nomen und im Plural."}
+];
+function hash(s){let h=0;for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))|0}return 'e'+(h>>>0).toString(36)}
+EX.forEach(x=>{x.id=hash(x.t+x.q)});
+
+/* ---------- Helfer ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function h(tag,attrs,...kids){
+  const n=document.createElement(tag);
+  for(const k in (attrs||{})){
+    const v=attrs[k];
+    if(v==null||v===false)continue;
+    if(k==='class')n.className=v;
+    else if(k.startsWith('on'))n.addEventListener(k.slice(2),v);
+    else if(v===true)n.setAttribute(k,'');
+    else n.setAttribute(k,v);
+  }
+  kids.flat().forEach(c=>{if(c!=null&&c!==false)n.append(c)});
+  return n;
+}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const norm=s=>s.toLowerCase().replace(/[’`´]/g,"'").replace(/\s+/g,' ').trim();
+const strip=s=>norm(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function checkGap(ex,val){
+  const n=norm(val);
+  if(!n)return 'empty';
+  if(ex.a.some(a=>norm(a)===n))return 'ok';
+  if(ex.a.some(a=>strip(a)===strip(val)))return 'accent';
+  return 'bad';
+}
+const correctText=ex=>ex.type==='gap'?ex.a[0]:ex.opts[ex.a];
+
+/* ---------- Fortschritt (nur lokal) ---------- */
+const KEY='fr8-mastered';
+function loadMastered(){try{return new Set(JSON.parse(localStorage.getItem(KEY)||'[]'))}catch(e){return new Set()}}
+function saveMastered(){try{localStorage.setItem(KEY,JSON.stringify([...mastered]))}catch(e){}}
+let mastered=loadMastered();
+
+/* ---------- Navigation ---------- */
+const VIEWS=['home','spickzettel','ueben'];
+function route(){
+  let v=location.hash.slice(1);
+  if(!VIEWS.includes(v))v='home';
+  VIEWS.forEach(x=>{
+    $('#view-'+x).hidden=x!==v;
+    const a=$('#nav-'+x);
+    if(x===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+  });
+  if(v==='home')renderHome();
+}
+window.addEventListener('hashchange',()=>{route();window.scrollTo(0,0)});
+
+/* ---------- Übersicht ---------- */
+function goPractice(topic){
+  cfg.topic=topic;renderChips();
+  if(location.hash==='#ueben'){route()}else{location.hash='#ueben'}
+}
+function renderHome(){
+  const box=$('#topic-cards');box.replaceChildren();
+  Object.keys(TOPICS).forEach(k=>{
+    const total=EX.filter(x=>x.t===k).length;
+    const done=EX.filter(x=>x.t===k&&mastered.has(x.id)).length;
+    box.append(h('div',{class:'card topic-card','data-topic':k},
+      h('h3',null,TOPICS[k].name),
+      h('p',null,TOPICS[k].teaser),
+      h('div',{class:'progress',role:'progressbar','aria-valuemin':0,'aria-valuemax':total,'aria-valuenow':done,'aria-label':'Gemeistert: '+TOPICS[k].name},
+        h('div',{style:'width:'+(total?done/total*100:0)+'%'})),
+      h('p',{class:'small'},`${done} von ${total} Aufgaben gemeistert`),
+      h('div',{class:'btns'},
+        h('button',{class:'btn primary',type:'button',onclick:()=>goPractice(k)},'Üben'),
+        h('button',{class:'btn',type:'button',onclick:()=>{location.hash='#spickzettel';setTimeout(()=>jump('cs-'+k),30)}},'Spickzettel'))
+    ));
+  });
+}
+$('#home-all').addEventListener('click',()=>goPractice('all'));
+
+/* ---------- Spickzettel ---------- */
+function jump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+$$('[data-jump]').forEach(b=>b.addEventListener('click',()=>jump(b.dataset.jump)));
+$('#print-btn').addEventListener('click',()=>window.print());
+
+/* ---------- Üben: Einstellungen ---------- */
+const cfg={topic:'all',count:10};
+function renderChips(){
+  const t=$('#chips-topic');
+  t.replaceChildren(h('legend',null,'Thema'));
+  [['all','Alles gemischt'],...Object.keys(TOPICS).map(k=>[k,TOPICS[k].name])].forEach(([k,label])=>{
+    t.append(h('button',{class:'chip',type:'button','aria-pressed':String(cfg.topic===k),onclick:()=>{cfg.topic=k;renderChips()}},label));
+  });
+  const c=$('#chips-count');
+  c.replaceChildren(h('legend',null,'Anzahl der Aufgaben'));
+  [[10,'10'],[0,'Alle']].forEach(([n,label])=>{
+    c.append(h('button',{class:'chip',type:'button','aria-pressed':String(cfg.count===n),onclick:()=>{cfg.count=n;renderChips()}},label));
+  });
+}
+$('#start-btn').addEventListener('click',()=>{
+  const pool=EX.filter(x=>cfg.topic==='all'||x.t===cfg.topic);
+  startSession(pool,cfg.count);
+});
+
+/* ---------- Üben: Ablauf ---------- */
+let S=null;
+function startSession(pool,count){
+  let q=shuffle(pool);
+  if(count&&q.length>count)q=q.slice(0,count);
+  S={queue:q,i:0,results:[],done:false};
+  $('#setup').hidden=true;
+  $('#quiz').hidden=false;
+  renderQuestion();
+  window.scrollTo(0,0);
+}
+function questionLine(ex){
+  const parts=ex.q.split('___');
+  const line=h('p',{class:'question',lang:ex.type==='mc'&&!ex.q.includes('___')&&/^[A-ZÄÖÜ][^.]*(sieht|ist|Das|der|Welcher)/.test(ex.q)?'de':'fr'});
+  const out=[];
+  parts.forEach((p,i)=>{
+    out.push(p);
+    if(i<parts.length-1){
+      if(ex.type==='gap'){
+        out.push(h('input',{class:'gap',type:'text',id:'gap-input',autocomplete:'off',autocapitalize:'none',spellcheck:'false',lang:'fr','aria-label':'Lücke ausfüllen'}));
+      }else{
+        out.push(h('span',{class:'blank','aria-label':'Lücke'}));
+      }
+    }
+  });
+  line.append(...out);
+  return line;
+}
+function renderQuestion(){
+  const ex=S.queue[S.i];S.done=false;S.retry=false;
+  const box=$('#quiz');box.replaceChildren();
+  box.setAttribute('data-topic',ex.t);
+  box.append(
+    h('div',{class:'q-head'},
+      h('span',{class:'tag'},TOPICS[ex.t].name),
+      ex.bonus?h('span',{class:'tag bonus'},'⭐ Bonus'):null,
+      h('span',{class:'count'},`Aufgabe ${S.i+1} von ${S.queue.length}`)),
+    h('div',{class:'progress',style:'--c:var(--blue)'},h('div',{style:'width:'+(S.i/S.queue.length*100)+'%'}))
+  );
+  box.append(questionLine(ex));
+  const fb=h('div',{id:'fb',role:'status','aria-live':'polite'});
+  if(ex.type==='mc'){
+    const opts=shuffle(ex.opts.map((text,i)=>({text,ok:i===ex.a})));
+    const wrap=h('div',{class:'opts',lang:'fr'});
+    opts.forEach(o=>{
+      const b=h('button',{class:'opt',type:'button',onclick:()=>{
+        if(S.done)return;
+        $$('.opt',wrap).forEach(x=>{x.disabled=true;});
+        $$('.opt',wrap).forEach(x=>{
+          const op=opts.find(p=>p.text===x.textContent);
+          if(op&&op.ok)x.classList.add('correct');
+        });
+        if(!o.ok)b.classList.add('wrong');
+        finish(ex,o.text,o.ok);
+      }},o.text);
+      wrap.append(b);
+    });
+    box.append(wrap);
+  }else{
+    const input=$('#gap-input',box);
+    const chars=h('div',{class:'chars','aria-label':'Sonderzeichen'});
+    ['é','è','ê','à','â','ç','ô','î','ù','û','ë','ï','œ',"'"].forEach(ch=>{
+      chars.append(h('button',{type:'button','aria-label':'Zeichen '+ch,onclick:()=>{
+        const inp=$('#gap-input');if(!inp||inp.disabled)return;
+        const s=inp.selectionStart??inp.value.length,e=inp.selectionEnd??s;
+        inp.value=inp.value.slice(0,s)+ch+inp.value.slice(e);
+        inp.focus();inp.setSelectionRange(s+1,s+1);
+      }},ch));
+    });
+    const check=h('button',{class:'btn primary',type:'button',id:'check-btn',onclick:()=>submitGap(ex)},'Prüfen');
+    box.append(chars,h('div',{class:'btns'},check));
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitGap(ex)}});
+    setTimeout(()=>input.focus(),0);
+  }
+  box.append(fb);
+}
+function submitGap(ex){
+  if(S.done)return;
+  const input=$('#gap-input');
+  const r=checkGap(ex,input.value);
+  const fb=$('#fb');
+  if(r==='empty'){fb.replaceChildren(h('div',{class:'fb info'},h('p',null,'Schreibe zuerst deine Antwort in die Lücke.')));input.focus();return}
+  if(r==='accent'){
+    fb.replaceChildren(h('div',{class:'fb info'},h('p',null,'Fast! Achte auf die Akzente und probiere es noch einmal.')));
+    input.focus();return;
+  }
+  input.disabled=true;$('#check-btn').disabled=true;
+  $$('.chars button').forEach(b=>b.disabled=true);
+  finish(ex,input.value.trim(),r==='ok');
+}
+function finish(ex,given,ok){
+  S.done=true;
+  S.results.push({ex,given,ok});
+  if(ok)mastered.add(ex.id);else mastered.delete(ex.id);
+  saveMastered();
+  const last=S.i===S.queue.length-1;
+  const fb=$('#fb');
+  fb.replaceChildren(h('div',{class:'fb '+(ok?'ok':'no')},
+    h('p',null,h('strong',null,ok?'✓ Richtig !':'✗ Leider falsch.')),
+    ok?null:h('p',{lang:'fr'},h('span',{lang:'de'},'Richtig wäre: '),h('strong',null,correctText(ex))),
+    h('p',{lang:'de'},ex.e),
+    h('div',{class:'btns'},h('button',{class:'btn primary',type:'button',id:'next-btn',onclick:next},last?'Ergebnis anzeigen':'Weiter →'))
+  ));
+  $('#next-btn').focus();
+}
+function next(){
+  if(S.i<S.queue.length-1){S.i++;renderQuestion()}else{renderResult()}
+}
+function filled(ex){
+  const c=correctText(ex);
+  return ex.q.includes('___')?ex.q.replace('___','«'+c+'»'):ex.q+' → '+c;
+}
+function renderResult(){
+  const box=$('#quiz');box.replaceChildren();box.removeAttribute('data-topic');
+  const total=S.results.length,ok=S.results.filter(r=>r.ok).length;
+  const wrong=S.results.filter(r=>!r.ok);
+  const pct=Math.round(ok/total*100);
+  const msg=pct===100?'Parfait ! Alles richtig.':pct>=75?'Très bien ! Fast geschafft.':pct>=50?'Ça va. Schau dir die Fehler noch einmal an.':'Bleib dran. Lies den Spickzettel und versuche es noch einmal.';
+  box.append(h('h2',null,'Ergebnis'),h('div',{class:'score'},`${ok} / ${total}`),h('p',null,msg));
+  if(wrong.length){
+    box.append(h('h3',null,'Das solltest du dir noch einmal ansehen'));
+    wrong.forEach(r=>{
+      box.append(h('div',{class:'err-item'},
+        h('div',{class:'small'},TOPICS[r.ex.t].name),
+        h('div',{lang:'fr'},filled(r.ex)),
+        h('div',{class:'small',lang:'de'},'Deine Antwort: '+r.given+' – '+r.ex.e)));
+    });
+  }
+  const btns=h('div',{class:'btns'});
+  if(wrong.length)btns.append(h('button',{class:'btn primary',type:'button',onclick:()=>startSession(wrong.map(r=>r.ex),0)},'Fehler wiederholen'));
+  btns.append(
+    h('button',{class:'btn'+(wrong.length?'':' primary'),type:'button',onclick:()=>{$('#quiz').hidden=true;$('#setup').hidden=false;window.scrollTo(0,0)}},'Neue Runde'),
+    h('a',{class:'btn',href:'#spickzettel'},'Spickzettel'),
+    h('a',{class:'btn',href:'#home'},'Übersicht'));
+  box.append(btns);
+}
+
+/* ---------- Zurücksetzen ---------- */
+$('#reset-btn').addEventListener('click',()=>{
+  if(confirm('Gespeicherten Fortschritt auf diesem Gerät löschen?')){
+    mastered=new Set();saveMastered();renderHome();
+  }
+});
+
+/* ---------- Start ---------- */
+renderChips();
+route();
+})();
+</script>
+</body>
+</html>
