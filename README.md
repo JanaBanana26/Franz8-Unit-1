@@ -1,31 +1,47 @@
-# Français 8 – Wiederholungs-Widget
+# L'échange scolaire – Französisch Klasse 8
 
-Interaktive Wiederholung für den Französischunterricht in Klasse 8:
+Interaktive Wiederholung für den Französischunterricht in Klasse 8 im Comic-Look in Blau und Rot. Die Schrift ist Abadi, mit Gill Sans, Calibri und Systemschrift als Ersatz auf Geräten ohne Abadi.
 
-- **Objektpronomen** (le, la, les, lui, leur …)
-- **Komparativ** (plus/aussi/moins … que, meilleur, mieux)
-- **Superlativ** (le plus, la moins, le meilleur …)
+- **Übersicht** mit Fortschritt pro Thema und dem „Reisepass“ (XP, Level, Trophäen)
+- **Spickzettel** zu Objektpronomen, Komparativ und Superlativ (druckbar)
+- **Vokabeln** aus *Découvertes 3, Unité 1* (109 Vokabeln): Wortliste, Karteikarten (FR→DE und DE→FR) und Schreibtest
+- **Üben** mit 38 Grammatikaufgaben und dem Vokabel-Schreibtest, mit Spielmodus
+- **Lernzielkontrolle** zum Ausdrucken mit Lösungsblatt und Selbsteinschätzung; jede Version wird zufällig zusammengestellt (3 Multiple-Choice- und 3 Lückenaufgaben je Grammatikthema plus 8 Vokabeln, 26 Punkte)
 
-Enthalten sind eine Übersicht mit Lernfortschritt, ein druckbarer **Grammatikspickzettel** und **Übungen** (Multiple Choice und Lückentexte mit Sofort-Feedback, Erklärungen und Fehlerwiederholung).
+Die gesamte Anwendung besteht aus einer einzigen Datei (`index.html`). Es gibt keine externen Bibliotheken, keine Schriften von Drittanbietern und kein Tracking. Fortschritt, XP und Trophäen werden nur lokal im Browser gespeichert.
 
-Die gesamte Anwendung besteht aus einer einzigen Datei (`index.html`). Es gibt keine externen Bibliotheken, keine Schriftarten von Drittanbietern und kein Tracking. Der Lernfortschritt wird nur lokal im Browser gespeichert.
+## Spielmodus
+
+- **XP:** 10 XP pro richtiger Antwort, dazu Bonus für Serien (bis +10) und Zusatzaufgaben (+10). Die Karteikarte „Gewusst“ gibt 3 XP.
+- **Combo:** Mehrere richtige Antworten in Folge bauen eine Serie auf.
+- **Sterne:** Am Rundenende gibt es 1 bis 3 Sterne (ab 50 %, 70 % und 90 %) mit XP-Bonus.
+- **Level und Ränge:** Alle 100 XP steigt das Level, vom Neuankömmling bis zum „Maître de l'échange“.
+- **Trophäen:** 8 Stück, zum Beispiel „Erste Reise“, „Feuer & Flamme“ (5 in Folge), „Parfait !“ (Runde ohne Fehler), „Fehlerjäger“ und „Vokabelheld“.
 
 ## Veröffentlichen mit GitHub Pages
 
-1. Neues Repository auf GitHub anlegen und `index.html` sowie `README.md` hochladen.
+1. Neues Repository auf GitHub anlegen (Public) und `index.html` sowie `README.md` hochladen.
 2. Im Repository: **Settings → Pages**.
 3. Unter **Build and deployment** bei *Source* **Deploy from a branch** wählen, Branch `main` und Ordner `/ (root)` auswählen, speichern.
-4. Nach ca. einer Minute ist die Seite unter `https://<benutzername>.github.io/<repository>/` erreichbar. Diesen Link kannst du an die Klasse weitergeben (zum Beispiel als QR-Code).
+4. Nach ca. einer Minute ist die Seite unter `https://<benutzername>.github.io/<repository>/` erreichbar.
 
-Einbetten in eine andere Seite:
+## Vokabeln anpassen
 
-```html
-<iframe src="https://<benutzername>.github.io/<repository>/" title="Français 8 Wiederholung" width="100%" height="800" style="border:0"></iframe>
+Die Vokabeln stehen in `index.html` im Array `VRAW`, eine Zeile pro Wort (Französisch, Deutsch):
+
+```js
+["un échange scolaire","ein Schüleraustausch"],
+["gentil/gentille","nett"],
+["un/e partenaire d'échange","ein Austauschpartner, eine Austauschpartnerin",["un partenaire d'échange","une partenaire d'échange"]]
 ```
 
-## Aufgaben ergänzen oder ändern
+- Die Nummer ergibt sich aus der Reihenfolge. Die Teile in `CATS` (je ca. 27 Wörter) werden ebenfalls aus der Position abgeleitet.
+- Beim Schreibtest werden Varianten automatisch erkannt: `/` und `,` trennen männliche und weibliche Form, `=` trennt gleichwertige Wendungen, `qn` / `qc` am Ende darf fehlen, Satzzeichen sind egal.
+- Eine dritte Angabe (Liste) legt die akzeptierten Schreibweisen selbst fest.
 
-Die Aufgaben stehen in `index.html` im Array `EX`. Jede Aufgabe ist ein Objekt:
+## Grammatikaufgaben ergänzen
+
+Die Aufgaben stehen im Array `EX`:
 
 ```js
 // Multiple Choice: a = Index der richtigen Option
@@ -35,11 +51,14 @@ Die Aufgaben stehen in `index.html` im Array `EX`. Jede Aufgabe ist ein Objekt:
 {t:'comp', type:'gap', q:"Il joue ___ que moi. (bien, mehr)", a:["mieux"], e:"Erklärung"}
 ```
 
-- `t` ist das Thema: `obj` (Objektpronomen), `comp` (Komparativ) oder `sup` (Superlativ).
-- `___` markiert die Lücke.
-- Mit `bonus:true` wird eine Aufgabe als Zusatzaufgabe gekennzeichnet.
-- Bei Lückentexten werden fehlende Akzente nicht akzeptiert, die Lernenden erhalten aber einen Hinweis und einen zweiten Versuch. Unter der Lücke gibt es Buttons für französische Sonderzeichen.
+- `t` ist das Thema: `obj`, `comp` oder `sup`. Mit `bonus:true` wird eine Aufgabe zur Zusatzaufgabe (mehr XP, nicht in der Lernzielkontrolle).
+- Bei Lücken werden fehlende Akzente nicht akzeptiert, es gibt aber einen Hinweis und einen zweiten Versuch.
+
+## Drucken
+
+- **Spickzettel:** im Bereich „Spickzettel“ auf „Drucken“ klicken.
+- **Test:** im Bereich „Lernzielkontrolle“ „Test drucken“ wählen, das Lösungsblatt über „Lösungsblatt drucken“.
 
 ## Lizenz
 
-Für Unterrichtsmaterial bietet sich zum Beispiel CC BY-SA 4.0 an. Ergänze bei Bedarf eine `LICENSE`-Datei.
+Für Unterrichtsmaterial bietet sich zum Beispiel CC BY-SA 4.0 an. Die Vokabeln stammen aus dem Lehrwerk *Découvertes 3* (Klett); prüfe vor einer öffentlichen Veröffentlichung, ob die Wortliste frei geteilt werden darf, oder veröffentliche das Repository nur für deine Klasse.

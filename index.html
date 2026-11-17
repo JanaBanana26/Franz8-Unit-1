@@ -2,127 +2,227 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✈️%3C/text%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Français 8 Repetition</title>
-<meta name="description" content="Wiederholung Französisch Klasse 8: Objektpronomen, Komparativ, Superlativ mit Spickzettel und Übungen.">
+<title>L'échange scolaire – Français 8</title>
+<meta name="description" content="Wiederholung Französisch Klasse 8: Objektpronomen, Komparativ, Superlativ, Vokabeln, Spickzettel, Übungen und druckbare Lernzielkontrolle.">
 <style>
 :root{
-  --bg:#f5f6fb;--card:#ffffff;--ink:#1b2133;--muted:#5a6379;--line:#dfe3ee;
-  --blue:#1d4ed8;--red:#d1344a;--green:#15803d;--ok-bg:#e6f5ea;--bad-bg:#fcebee;--note-bg:#fff7e0;
-  --obj:#1d4ed8;--comp:#c2410c;--sup:#6d28d9;--on-c:#ffffff;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#10131c;--card:#192032;--ink:#e8ebf4;--muted:#a3adc4;--line:#2b3550;
-    --blue:#7ea2ff;--red:#ff7a8c;--green:#5fd18a;--ok-bg:#16301f;--bad-bg:#3a1b22;--note-bg:#2e2a14;
-    --obj:#7ea6ff;--comp:#ffa066;--sup:#b79bff;--on-c:#0b1020;
-  }
+  --ink:#111111;--paper:#fffaf0;--blue:#1f4fd8;--red:#d71f2f;--navy:#14257a;--sky:#0b6bb5;
+  --card:#ffffff;--muted:#444444;
+  --ok-bg:#dff5e3;--bad-bg:#ffe1e4;--info-bg:#e1ebff;--note-bg:#fff4c2;--green:#146c2e;
+  --shadow:5px 5px 0 var(--ink);
+  --font:Abadi,"Abadi MT","Gill Sans MT","Gill Sans",Calibri,"Trebuchet MS","Segoe UI",system-ui,sans-serif;
+  --display:var(--font);
 }
 *{box-sizing:border-box}
-body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
-.flag{height:6px;background:linear-gradient(90deg,#1d4ed8 0 33.3%,#ffffff 33.3% 66.6%,#d1344a 66.6%);border-bottom:1px solid var(--line)}
-.wrap{max-width:880px;margin:0 auto;padding:0 16px 48px}
-header.top{padding:20px 0 8px}
-h1{margin:0;font-size:1.6rem;line-height:1.2}
-.sub{margin:4px 0 0;color:var(--muted)}
-nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 20px}
-nav.tabs a{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-weight:600}
-nav.tabs a[aria-current="page"]{background:var(--blue);border-color:var(--blue);color:var(--on-c)}
-@media (prefers-color-scheme:dark){nav.tabs a[aria-current="page"]{color:#0b1020}}
-h2{font-size:1.3rem;margin:0 0 12px}
+body{
+  margin:0;font:17px/1.5 var(--font);color:var(--ink);
+  background-color:var(--paper);
+  background-image:radial-gradient(rgba(31,79,216,.22) 1.3px,transparent 1.6px);
+  background-size:14px 14px;
+}
+.flag{height:10px;background:linear-gradient(90deg,var(--blue) 0 33.3%,#fff 33.3% 66.6%,var(--red) 66.6%);border-bottom:3px solid var(--ink)}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px 48px}
+
+/* Kopf */
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 0 6px}
+h1{margin:0;font:800 clamp(1.7rem,6vw,2.8rem)/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em;
+  color:var(--red);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;text-shadow:4px 4px 0 var(--ink);transform:rotate(-2deg)}
+.bubble{position:relative;display:inline-block;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:6px 14px;font-weight:700;margin:14px 0 0 6px}
+.bubble::after{content:"";position:absolute;left:24px;bottom:-12px;width:18px;height:18px;background:#fff;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg)}
+.burst{position:relative;display:inline-grid;place-items:center;width:var(--s,150px);height:var(--s,150px);text-align:center;color:#fff;font:900 1rem/1.1 var(--display);text-transform:uppercase;isolation:isolate}
+.burst::before,.burst::after{content:"";position:absolute;z-index:-1;clip-path:var(--star)}
+.burst::before{inset:0;background:var(--ink)}
+.burst::after{inset:4px;background:var(--red)}
+.burst.small{--s:96px;font-size:.78rem}
+
+nav.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 22px}
+nav.tabs a{padding:8px 14px;border:3px solid var(--ink);border-radius:8px;background:var(--blue);color:#fff;text-decoration:none;
+  font:800 .9rem var(--display);text-transform:uppercase;letter-spacing:.02em;box-shadow:3px 3px 0 var(--ink)}
+nav.tabs a[aria-current="page"]{background:var(--red);transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+h2{font:900 1.35rem/1.2 var(--display);text-transform:uppercase;margin:0 0 12px}
 h3{font-size:1.05rem;margin:18px 0 8px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
-[data-topic="obj"]{--c:var(--obj)}
-[data-topic="comp"]{--c:var(--comp)}
-[data-topic="sup"]{--c:var(--sup)}
-.topic-card{border-top:5px solid var(--c)}
-.topic-card h3{margin-top:0;color:var(--c)}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+
+/* Panels */
+.card{background:var(--card);border:3px solid var(--ink);border-radius:8px;box-shadow:var(--shadow);padding:16px;margin-bottom:22px}
+[data-topic="obj"]{--c:var(--blue)}
+[data-topic="comp"]{--c:var(--red)}
+[data-topic="sup"]{--c:var(--navy)}
+[data-topic="voc"]{--c:var(--sky)}
+[data-topic="test"]{--c:var(--red)}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid .card{margin-bottom:0}
+.grid .card:nth-child(odd){transform:rotate(-.5deg)}
+.grid .card:nth-child(even){transform:rotate(.5deg)}
+.topic-card h3{margin:-16px -16px 12px;padding:8px 16px;background:var(--c);color:#fff;border-bottom:3px solid var(--ink);
+  font:900 1.05rem var(--display);text-transform:uppercase;letter-spacing:.03em}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 button,.btn{font:inherit;cursor:pointer}
-.btn{padding:9px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:600}
-.btn:hover{border-color:var(--blue)}
-.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--on-c)}
-@media (prefers-color-scheme:dark){.btn.primary{color:#0b1020}}
-.btn:focus-visible,a:focus-visible,input:focus-visible,.opt:focus-visible,.chip:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.progress{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:10px 0 4px}
+.btn{display:inline-block;padding:9px 16px;border:3px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);
+  font:800 .95rem var(--display);text-transform:uppercase;letter-spacing:.02em;text-decoration:none;box-shadow:3px 3px 0 var(--ink)}
+.btn:hover{background:var(--info-bg)}
+.btn:active{transform:translate(3px,3px);box-shadow:none}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.red{background:var(--red);color:#fff}
+.btn.primary:hover,.btn.red:hover{filter:brightness(1.12)}
+.btn:disabled{opacity:.6;cursor:default}
+.btn:focus-visible,a:focus-visible,input:focus-visible,.opt:focus-visible,.chip:focus-visible,.flash:focus-visible{outline:4px solid var(--red);outline-offset:3px}
+.progress{height:14px;border:2px solid var(--ink);border-radius:99px;background:#fff;overflow:hidden;margin:10px 0 4px}
 .progress>div{height:100%;background:var(--c,var(--blue))}
 .small{font-size:.9rem;color:var(--muted)}
-table.tbl{border-collapse:collapse;width:100%;margin:8px 0 12px;font-size:.97rem}
-.tbl th,.tbl td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
-.tbl th{background:color-mix(in srgb,var(--c,var(--blue)) 14%,var(--card))}
 .scroll{overflow-x:auto}
-.ex{margin:4px 0;padding-left:12px;border-left:3px solid var(--c,var(--blue))}
+
+/* Tabellen & Spickzettel */
+table.tbl{border-collapse:collapse;width:100%;margin:8px 0 12px;font-size:.97rem;background:#fff}
+.tbl th,.tbl td{border:2px solid var(--ink);padding:6px 10px;text-align:left;vertical-align:top}
+.tbl th{background:#e1ebff;background:color-mix(in srgb,var(--c,var(--blue)) 20%,#fff)}
+.ex{margin:5px 0;padding-left:12px;border-left:5px solid var(--c,var(--blue))}
 .ex span{color:var(--muted);font-size:.93em}
 .rule{margin:6px 0}
-.note{background:var(--note-bg);border-radius:10px;padding:10px 12px;margin:10px 0}
-.bad{color:var(--red);font-weight:600}
-.good{color:var(--green);font-weight:600}
-.cheat h2{color:var(--c);border-bottom:3px solid var(--c);padding-bottom:4px}
-.jump{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-/* Üben */
+.note{background:var(--note-bg);border:2px solid var(--ink);border-radius:10px;padding:10px 12px;margin:12px 0}
+.bad{color:var(--red);font-weight:800}
+.good{color:var(--green);font-weight:800}
+.cheat h2{color:var(--c);border-bottom:4px solid var(--c);padding-bottom:4px}
+.jump{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+
+/* Chips */
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px;border:0;padding:0}
-fieldset.chips legend{font-weight:600;margin-bottom:4px;padding:0}
-.chip{padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--on-c);font-weight:600}
-@media (prefers-color-scheme:dark){.chip[aria-pressed="true"]{color:#0b1020}}
+fieldset.chips legend{font-weight:800;margin-bottom:4px;padding:0}
+.chip{padding:7px 14px;border:3px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font-weight:700}
+.chip[aria-pressed="true"]{background:var(--blue);color:#fff}
+
+/* Aufgaben */
 .q-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
-.q-head .count{margin-left:auto;color:var(--muted);font-size:.9rem}
-.tag{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--c);color:var(--on-c);font-size:.82rem;font-weight:600}
-.tag.bonus{background:var(--note-bg);color:var(--ink);border:1px solid var(--line)}
-.question{font-size:1.2rem;margin:14px 0}
-.blank{display:inline-block;min-width:3.2em;border-bottom:3px solid var(--muted);margin:0 4px}
-input.gap{font:inherit;font-size:1.1rem;width:9em;padding:3px 8px;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);margin:0 4px}
+.q-head .count{margin-left:auto;color:var(--muted);font-size:.9rem;font-weight:700}
+.tag{display:inline-block;padding:2px 10px;border:2px solid var(--ink);border-radius:99px;background:var(--c);color:#fff;font-size:.82rem;font-weight:800}
+.tag.bonus{background:var(--note-bg);color:var(--ink)}
+.question{font-size:1.2rem;margin:14px 0;font-weight:600}
+.blank{display:inline-block;min-width:3.2em;border-bottom:4px solid var(--ink);margin:0 4px}
+input.gap{font:inherit;font-size:1.1rem;width:9em;padding:3px 8px;border:3px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);margin:0 4px}
 .chars{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
-.chars button{min-width:2.2em;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
-.opts{display:grid;gap:8px;margin-top:8px}
-.opt{text-align:left;padding:11px 14px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
-.opt:hover:not(:disabled){border-color:var(--blue)}
-.opt.correct{background:var(--ok-bg);border-color:var(--green)}
-.opt.wrong{background:var(--bad-bg);border-color:var(--red)}
-.fb{margin-top:14px;padding:12px 14px;border-radius:10px}
+.chars button{min-width:2.3em;padding:4px 8px;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);font-weight:700}
+.opts{display:grid;gap:10px;margin-top:8px}
+.opt{text-align:left;padding:11px 14px;border:3px solid var(--ink);border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-weight:600;box-shadow:3px 3px 0 var(--ink)}
+.opt:hover:not(:disabled){background:var(--info-bg)}
+.opt.correct{background:var(--ok-bg)}
+.opt.wrong{background:var(--bad-bg)}
+.fb{position:relative;margin-top:22px;padding:12px 14px;border:3px solid var(--ink);border-radius:16px;background:#fff}
+.fb::before{content:"";position:absolute;left:28px;top:-12px;width:18px;height:18px;background:inherit;border-left:3px solid var(--ink);border-top:3px solid var(--ink);transform:rotate(45deg)}
 .fb.ok{background:var(--ok-bg)}
 .fb.no{background:var(--bad-bg)}
-.fb.info{background:var(--note-bg)}
+.fb.info{background:var(--info-bg)}
 .fb p{margin:4px 0}
-.score{font-size:2.2rem;font-weight:800;margin:4px 0}
-.err-item{padding:10px 0;border-top:1px solid var(--line)}
+.fb .verdict{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:900 1.15rem var(--display);text-transform:uppercase}
+.score{font:900 2.2rem/1 var(--display)}
+.err-item{padding:10px 0;border-top:2px dashed var(--ink)}
 .err-item:first-child{border-top:0}
+
+/* Karteikarten */
+.flash{display:grid;gap:6px;place-items:center;width:100%;min-height:200px;margin:12px 0;padding:20px;border:4px solid var(--ink);border-radius:12px;background:#fff;box-shadow:var(--shadow);
+  font:900 clamp(1.5rem,5vw,2.2rem)/1.2 var(--display);color:var(--ink);cursor:pointer;text-align:center}
+.flash.flipped{background:var(--bad-bg)}
+.flash .small-label{font:700 .8rem var(--font);text-transform:uppercase;color:var(--muted);letter-spacing:.08em}
+.center{text-align:center}
+
+/* Lernzielkontrolle (Blatt) */
+.sheet{background:#fff;color:#000;border:3px solid var(--ink);box-shadow:var(--shadow);padding:22px;margin-bottom:22px}
+.sheet h2{margin:0}
+.sheet-head{border-bottom:3px solid #000;padding-bottom:10px;margin-bottom:14px}
+.fields{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}
+.field{display:inline-flex;align-items:flex-end;gap:6px;font-weight:700}
+.wline{display:inline-block;min-width:6em;border-bottom:1.5px solid #000;margin:0 4px}
+.wline.long{min-width:11em}
+.test-part{margin-bottom:18px;break-inside:avoid}
+.part-title{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 6px;padding:4px 10px;background:#000;color:#fff;font:900 1rem var(--display);text-transform:uppercase}
+.pts{font:700 .9rem var(--font)}
+ol.items{margin:6px 0 0;padding-left:1.6em}
+ol.items li{margin:0 0 12px}
+.mc-opts{display:flex;gap:6px 22px;flex-wrap:wrap;margin-top:4px}
+.tbox{white-space:nowrap}
+.vtable td.write{height:2.4em;width:55%}
+.sol-hidden{display:none}
+.selfcheck td.box{text-align:center;width:6.5em}
+.icon{display:inline-block;margin-right:.4em;font-style:normal}
+.hero-right{display:flex;align-items:center;gap:14px}
+.hero-icons{display:flex;gap:8px;font-size:2.1rem;line-height:1;transform:rotate(3deg)}
+.hero-icons span{display:grid;place-items:center;width:3.1rem;height:3.1rem;background:#fff;border:3px solid var(--ink);border-radius:50%;box-shadow:3px 3px 0 var(--ink);font-size:1.6rem}
+
 footer{margin-top:28px;color:var(--muted);font-size:.88rem}
 footer button{background:none;border:0;color:var(--muted);text-decoration:underline;padding:0}
+
+.hud{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-bottom:12px;padding:8px 12px;background:var(--info-bg);border:3px solid var(--ink);border-radius:10px}
+.hud-item{font-weight:800}
+.hud-item.flame{color:var(--red)}
+.hud-bar{flex:1 1 100%;margin:2px 0 0}
+.badges{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-top:12px}
+.badge{display:grid;gap:2px;justify-items:center;text-align:center;padding:10px;border:3px solid var(--ink);border-radius:10px;background:#f1f1f1;color:#555}
+.badge.got{background:var(--note-bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.badge:not(.got){filter:grayscale(1)}
+.badge-icon{font-size:2rem;line-height:1.2}
+.sfx{display:inline-block;transform:rotate(-5deg);background:var(--red);color:#fff;border:3px solid var(--ink);padding:0 10px;box-shadow:3px 3px 0 var(--ink);font-size:1rem}
+.xp-pop{display:inline-block;background:var(--blue);color:#fff;border:3px solid var(--ink);border-radius:99px;padding:0 10px;font-size:1rem;text-transform:none}
+.stars{font-size:2.4rem;line-height:1;color:var(--red);letter-spacing:.1em;margin:6px 0}
+#toasts{position:fixed;top:14px;right:14px;z-index:50;display:grid;gap:10px;max-width:min(92vw,340px)}
+.toast{display:flex;gap:10px;align-items:center;padding:10px 14px;background:#fff;border:3px solid var(--ink);border-radius:12px;box-shadow:var(--shadow);animation:pop .35s ease-out}
+.toast-icon{font-size:2rem}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.fb.ok{animation:pop .35s ease-out}
+.fb.no{animation:shake .3s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:520px){
+  .burst.small{display:none}
+  nav.tabs a{font-size:.8rem;padding:7px 10px}
+}
 @media print{
-  .flag,nav.tabs,.no-print,footer,.jump{display:none!important}
   body{background:#fff;color:#000;font-size:11pt}
-  .card{border:0;padding:0}
+  .flag,header.top,nav.tabs,.no-print,footer,.jump,.hud,#toasts{display:none!important}
+  .card,.sheet{border:0;box-shadow:none;padding:0;transform:none!important}
   .cheat h2{break-after:avoid}
-  .tbl th,.tbl td{border-color:#999}
+  .tbl th,.tbl td{border-color:#000}
+  .part-title{background:#fff;color:#000;border-top:2px solid #000;border-bottom:2px solid #000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #test-solution{display:none}
+  body.print-solution #test-solution{display:block!important}
+  body.print-solution #test-sheet{display:none}
 }
 </style>
 </head>
 <body>
 <div class="flag" aria-hidden="true"></div>
+<div id="toasts" role="status" aria-live="polite"></div>
 <div class="wrap">
 <header class="top">
-  <h1>Français – Klasse 8</h1>
-  <p class="sub">Wiederholung: Objektpronomen · Komparativ · Superlativ</p>
+  <div>
+    <h1>L'échange scolaire</h1>
+    <p class="bubble">Wiederholung Französisch · Klasse 8</p>
+  </div>
+  <div class="hero-right" aria-hidden="true">
+    <div class="hero-icons"><span>🎒</span><span>✈️</span><span>🏫</span></div>
+    <div class="burst small"><span>En<br>avant&nbsp;!</span></div>
+  </div>
 </header>
 
 <nav class="tabs" aria-label="Bereiche">
-  <a id="nav-home" href="#home">Übersicht</a>
-  <a id="nav-spickzettel" href="#spickzettel">Spickzettel</a>
-  <a id="nav-ueben" href="#ueben">Üben</a>
+  <a id="nav-home" href="#home"><span class="icon" aria-hidden="true">🏠</span>Übersicht</a>
+  <a id="nav-spickzettel" href="#spickzettel"><span class="icon" aria-hidden="true">📋</span>Spickzettel</a>
+  <a id="nav-vokabeln" href="#vokabeln"><span class="icon" aria-hidden="true">📖</span>Vokabeln</a>
+  <a id="nav-ueben" href="#ueben"><span class="icon" aria-hidden="true">✏️</span>Üben</a>
+  <a id="nav-test" href="#test"><span class="icon" aria-hidden="true">📝</span>Lernzielkontrolle</a>
 </nav>
 
 <main>
 <!-- ÜBERSICHT -->
 <section id="view-home">
   <div class="card">
-    <h2>Bonjour !</h2>
-    <p>So wiederholst du am besten: Lies zuerst den <strong>Spickzettel</strong>, übe dann mit den Aufgaben. Richtig gelöste Aufgaben werden als <em>gemeistert</em> gezählt, Fehler kannst du direkt wiederholen.</p>
+    <h2><span class="icon" aria-hidden="true">✈️</span>Bonjour&nbsp;!</h2>
+    <p>So wiederholst du am besten: Lies zuerst den <strong>Spickzettel</strong>, übe die <strong>Vokabeln</strong>, löse die <strong>Übungen</strong> und prüfe dich am Ende mit der <strong>Lernzielkontrolle</strong>. Richtig gelöste Aufgaben zählen als <em>gemeistert</em>. Beim Üben sammelst du XP, baust Serien auf und schaltest Trophäen frei.</p>
   </div>
+  <div id="game-card"></div>
   <div class="grid" id="topic-cards"></div>
   <div class="btns">
-    <button class="btn primary" id="home-all">Alles gemischt üben</button>
+    <button class="btn primary" id="home-all" type="button">Grammatik gemischt üben</button>
     <a class="btn" href="#spickzettel">Zum Spickzettel</a>
   </div>
 </section>
@@ -130,14 +230,14 @@ footer button{background:none;border:0;color:var(--muted);text-decoration:underl
 <!-- SPICKZETTEL -->
 <section id="view-spickzettel" hidden>
   <div class="jump no-print">
-    <button class="btn" data-jump="cs-obj">Objektpronomen</button>
-    <button class="btn" data-jump="cs-comp">Komparativ</button>
-    <button class="btn" data-jump="cs-sup">Superlativ</button>
-    <button class="btn" id="print-btn">🖨 Drucken</button>
+    <button class="btn" data-jump="cs-obj" type="button">Objektpronomen</button>
+    <button class="btn" data-jump="cs-comp" type="button">Komparativ</button>
+    <button class="btn" data-jump="cs-sup" type="button">Superlativ</button>
+    <button class="btn red" id="print-btn" type="button">🖨 Drucken</button>
   </div>
 
   <article class="card cheat" id="cs-obj" data-topic="obj">
-    <h2>Les pronoms objets – Objektpronomen</h2>
+    <h2><span class="icon" aria-hidden="true">💬</span>Les pronoms objets – Objektpronomen</h2>
     <div class="scroll"><table class="tbl">
       <thead><tr><th>Person</th><th>direkt (wen? was?)</th><th>indirekt (wem?)</th></tr></thead>
       <tbody lang="fr">
@@ -170,13 +270,13 @@ footer button{background:none;border:0;color:var(--muted);text-decoration:underl
   </article>
 
   <article class="card cheat" id="cs-comp" data-topic="comp">
-    <h2>Le comparatif – Komparativ</h2>
+    <h2><span class="icon" aria-hidden="true">⚖️</span>Le comparatif – Komparativ</h2>
     <div class="scroll"><table class="tbl">
       <thead><tr><th></th><th>Adjektiv / Adverb</th><th>Nomen</th><th>Verb</th></tr></thead>
       <tbody lang="fr">
-        <tr><td>+ mehr</td><td>plus + <i>adj.</i> + que</td><td>plus de + <i>nom</i> + que</td><td><i>verbe</i> + plus que</td></tr>
-        <tr><td>= gleich</td><td>aussi + <i>adj.</i> + que</td><td>autant de + <i>nom</i> + que</td><td><i>verbe</i> + autant que</td></tr>
-        <tr><td>− weniger</td><td>moins + <i>adj.</i> + que</td><td>moins de + <i>nom</i> + que</td><td><i>verbe</i> + moins que</td></tr>
+        <tr><td lang="de">+ mehr</td><td>plus + <i>adj.</i> + que</td><td>plus de + <i>nom</i> + que</td><td><i>verbe</i> + plus que</td></tr>
+        <tr><td lang="de">= gleich</td><td>aussi + <i>adj.</i> + que</td><td>autant de + <i>nom</i> + que</td><td><i>verbe</i> + autant que</td></tr>
+        <tr><td lang="de">− weniger</td><td>moins + <i>adj.</i> + que</td><td>moins de + <i>nom</i> + que</td><td><i>verbe</i> + moins que</td></tr>
       </tbody>
     </table></div>
     <p class="ex" lang="fr">Léa est <strong>plus grande que</strong> Tom. <span lang="de">Léa ist größer als Tom.</span></p>
@@ -200,17 +300,17 @@ footer button{background:none;border:0;color:var(--muted);text-decoration:underl
   </article>
 
   <article class="card cheat" id="cs-sup" data-topic="sup">
-    <h2>Le superlatif – Superlativ</h2>
+    <h2><span class="icon" aria-hidden="true">🏆</span>Le superlatif – Superlativ</h2>
     <p class="rule"><strong lang="fr">le / la / les + plus / moins + Adjektiv + de</strong> <span class="small">(Artikel passt zum Bezugswort)</span></p>
     <p class="ex" lang="fr">C'est <strong>la plus grande</strong> ville <strong>de</strong> France. <span lang="de">Das ist die größte Stadt Frankreichs.</span></p>
     <p class="ex" lang="fr">Tom est <strong>le plus petit de</strong> la classe. <span lang="de">Tom ist der Kleinste in der Klasse.</span></p>
-    <p class="rule">Im Superlativ heißt „in" fast immer <strong lang="fr">de</strong>, nicht <span lang="fr">dans</span>.</p>
+    <p class="rule">Im Superlativ heißt „in“ fast immer <strong lang="fr">de</strong>, nicht <span lang="fr">dans</span>.</p>
 
     <h3>Stellung des Adjektivs</h3>
     <div class="scroll"><table class="tbl">
       <thead><tr><th>Adjektiv steht …</th><th>Superlativ</th></tr></thead>
       <tbody>
-        <tr><td><strong>nach</strong> dem Nomen (<span lang="fr">intéressant, rapide, cher …</span>)</td><td lang="fr">le roman <strong>le plus</strong> intéressant → <em>Artikel zweimal!</em></td></tr>
+        <tr><td><strong>nach</strong> dem Nomen (<span lang="fr">intéressant, rapide, cher …</span>)</td><td lang="fr">le roman <strong>le plus</strong> intéressant → <em lang="de">Artikel zweimal!</em></td></tr>
         <tr><td><strong>vor</strong> dem Nomen (<span lang="fr">beau, joli, bon, mauvais, grand, petit, jeune, vieux, nouveau</span>)</td><td lang="fr">la <strong>plus</strong> belle maison · le meilleur film</td></tr>
       </tbody>
     </table></div>
@@ -230,19 +330,48 @@ footer button{background:none;border:0;color:var(--muted);text-decoration:underl
   </article>
 </section>
 
+<!-- VOKABELN -->
+<section id="view-vokabeln" hidden>
+  <div class="card" id="v-setup" data-topic="voc">
+    <h2><span class="icon" aria-hidden="true">📖</span>Vokabeln – Découvertes 3, Unité 1</h2>
+    <fieldset class="chips" id="chips-vcat"><legend>Thema</legend></fieldset>
+    <fieldset class="chips" id="chips-vdir"><legend>Karteikarten: Richtung</legend></fieldset>
+    <div class="btns">
+      <button class="btn primary" id="vstart-cards" type="button">Karteikarten starten</button>
+      <button class="btn red" id="vstart-test" type="button">Schreibtest starten</button>
+    </div>
+    <p class="small">Beim Schreibtest ist Deutsch vorgegeben, du schreibst das französische Wort oder die Wendung auf (Nomen mit Artikel). Satzzeichen sowie „qn“ / „qc“ am Ende sind egal.</p>
+  </div>
+  <div class="card" id="v-run" data-topic="voc" hidden></div>
+  <div id="wordlist"></div>
+</section>
+
 <!-- ÜBEN -->
 <section id="view-ueben" hidden>
   <div class="card" id="setup">
-    <h2>Üben</h2>
-    <fieldset class="chips" id="chips-topic">
-      <legend>Thema</legend>
-    </fieldset>
-    <fieldset class="chips" id="chips-count">
-      <legend>Anzahl der Aufgaben</legend>
-    </fieldset>
-    <button class="btn primary" id="start-btn">Los geht's</button>
+    <h2><span class="icon" aria-hidden="true">✏️</span>Üben</h2>
+    <div id="hud-setup"></div>
+    <fieldset class="chips" id="chips-topic"><legend>Thema</legend></fieldset>
+    <fieldset class="chips" id="chips-count"><legend>Anzahl der Aufgaben</legend></fieldset>
+    <button class="btn primary" id="start-btn" type="button">Los geht's</button>
   </div>
   <div class="card" id="quiz" hidden></div>
+</section>
+
+<!-- LERNZIELKONTROLLE -->
+<section id="view-test" hidden>
+  <div class="card no-print">
+    <h2><span class="icon" aria-hidden="true">📝</span>Lernzielkontrolle</h2>
+    <p>Ein Test zum Ausdrucken mit je 6 Aufgaben zu Objektpronomen, Komparativ und Superlativ sowie 8 Vokabeln (26 Punkte) und einer Selbsteinschätzung. Jede neue Version wird aus dem Aufgabenpool zufällig zusammengestellt.</p>
+    <div class="btns">
+      <button class="btn primary" id="t-new" type="button">Neue Version erzeugen</button>
+      <button class="btn red" id="t-print" type="button">🖨 Test drucken</button>
+      <button class="btn" id="t-sol-toggle" type="button">Lösungen anzeigen</button>
+      <button class="btn" id="t-print-sol" type="button">🖨 Lösungsblatt drucken</button>
+    </div>
+  </div>
+  <article class="sheet" id="test-sheet"></article>
+  <article class="sheet sol-hidden" id="test-solution"></article>
 </section>
 </main>
 
@@ -256,16 +385,27 @@ footer button{background:none;border:0;color:var(--muted);text-decoration:underl
 (function(){
 'use strict';
 
+/* ---------- Sternform für Sprechblasen/Explosionen ---------- */
+(function(){
+  const n=16,pts=[];
+  for(let i=0;i<n*2;i++){
+    const r=i%2?38:50,a=Math.PI*i/n-Math.PI/2;
+    pts.push((50+r*Math.cos(a)).toFixed(1)+'% '+(50+r*Math.sin(a)).toFixed(1)+'%');
+  }
+  document.documentElement.style.setProperty('--star','polygon('+pts.join(',')+')');
+})();
+
 /* ---------- Daten ---------- */
 const TOPICS={
   obj:{name:'Objektpronomen',teaser:'Wen oder wem? le, la, les, lui, leur – und wo sie im Satz stehen.'},
   comp:{name:'Komparativ',teaser:'plus … que, aussi … que, moins … que – und meilleur statt plus bon.'},
-  sup:{name:'Superlativ',teaser:'le plus, la moins, les meilleurs – mit der richtigen Stellung.'}
+  sup:{name:'Superlativ',teaser:'le plus, la moins, les meilleurs – mit der richtigen Stellung.'},
+  voc:{name:'Vokabeln',teaser:'Découvertes 3, Unité 1: 109 Vokabeln mit Karteikarten und Schreibtest.'}
 };
 
 /* type "mc": opts (Array), a = Index der richtigen Option
    type "gap": a = Array akzeptierter Antworten
-   bonus:true markiert Zusatzaufgaben; e = Erklärung */
+   bonus:true markiert Zusatzaufgaben (nicht im Test); e = Erklärung */
 const EX=[
  // Objektpronomen
  {t:'obj',type:'mc',q:"Je vois Marie. → Je ___ vois.",opts:["la","le","lui"],a:0,e:"Marie ist direktes Objekt (wen?) und weiblich → la."},
@@ -311,8 +451,160 @@ const EX=[
  {t:'sup',type:'gap',q:"C'est Léa qui court ___ vite. (am schnellsten)",a:["le plus"],e:"Beim Adverb bleibt le unverändert: le plus vite."},
  {t:'sup',type:'mc',q:"Ce sont mes ___ amis.",opts:["meilleurs","plus bons","mieux"],a:0,e:"bon → meilleur; steht hier vor dem Nomen und im Plural."}
 ];
+
+const ICONS={obj:'💬',comp:'⚖️',sup:'🏆',voc:'📖',test:'📝'};
+
+/* Vokabeln: Quizlet-Set „Découvertes 3: Unité 1“ (Nummern wie in der Vorlage).
+   Zeile: [Französisch, Deutsch, optional: Liste akzeptierter Schreibweisen].
+   Ohne dritte Angabe werden die Schreibweisen automatisch abgeleitet:
+   „/“ und „,“ trennen Varianten (z. B. männlich/weiblich), „=“ trennt gleichwertige Wendungen,
+   „qn“ / „qc“ am Ende darf beim Schreiben fehlen, (f)/(m) am Ende muss nicht getippt werden.
+   Satzzeichen werden beim Vergleich ignoriert. */
+const CATS={t1:'Teil 1 (1–27)',t2:'Teil 2 (28–54)',t3:'Teil 3 (55–81)',t4:'Teil 4 (82–109)'};
+const VRAW=[
+ ["Vive...!","Es lebe...! / Es leben...!"],
+ ["un échange","ein Austausch"],
+ ["plusieurs","mehrere"],
+ ["une possibilité","eine Möglichkeit"],
+ ["un échange scolaire","ein Schüleraustausch"],
+ ["un séjour","ein Aufenthalt"],
+ ["un accueil","ein Empfang"],
+ ["une famille d'accueil","eine Gastfamilie"],
+ ["franco-allemand/franco-allemande","deutsch-französisch"],
+ ["l'OFAJ (Office franco-allemand pour la jeunesse)","das DFJW (Deutsch-französisches Jugendwerk)",["l'OFAJ (Office franco-allemand pour la jeunesse)","l'OFAJ","OFAJ","l'Office franco-allemand pour la jeunesse","Office franco-allemand pour la jeunesse"]],
+ ["un lycée","ein Gymnasium; ein Lycée"],
+ ["excité, excitée","aufgeregt"],
+ ["un programme d'échange","ein Austauschprogramm"],
+ ["l'Allemagne","Deutschland"],
+ ["un correspondant, une correspondante","ein Brieffreund/eine Brieffreundin; ein Austauschpartner/eine Austauschpartnerin"],
+ ["difficile","schwierig"],
+ ["supporter qc","jdn./ etw. ertragen/aushalten"],
+ ["une annonce","eine Anzeige"],
+ ["une expérience","eine Erfahrung"],
+ ["un progrès","ein Fortschritt"],
+ ["rechercher qn","jdn. suchen"],
+ ["tout/toute/tous/toutes","ganz (+ Nomen)"],
+ ["aller chercher qn","jdn abholen"],
+ ["aussi rouge que","so rot wie"],
+ ["une phrase","ein Satz"],
+ ["un mot","ein Wort"],
+ ["un début","ein Anfang"],
+ ["au début","am Anfang"],
+ ["pareil, pareille","gleich"],
+ ["le skate","das Skateboardfahren; das Skateboard"],
+ ["plus long que","länger als"],
+ ["timide/timide","schüchtern"],
+ ["disponible/disponible","verfügbar (im Sinne von Zeit haben)"],
+ ["moins disponible que","weniger verfügbar als"],
+ ["des chips (f.)","(Kartoffel-)Chips"],
+ ["un pays","ein Land"],
+ ["le mal du pays","das Heimweh"],
+ ["être embêté/embêtée","verlegen sein/jdm unangenehm sein"],
+ ["meilleur, meilleure","besser"],
+ ["impatient, impatiente","ungeduldig"],
+ ["à une heure de","eine Stunde entfernt liegen"],
+ ["la campagne","das Land (im Gegensatz zur Stadt)"],
+ ["magnifique","wunderbar, wunderschön, großartig"],
+ ["la réalité","die Wirklichkeit"],
+ ["un âne, une ânesse","ein Esel/eine Eselin"],
+ ["un chien/une chienne","ein Hund, eine Hündin"],
+ ["par contre","hingegen, dagegen"],
+ ["la nuit","die Nacht"],
+ ["déçu/déçue","enttäuscht"],
+ ["pire","schlimmer"],
+ ["exprimer qc","etw. ausdrücken"],
+ ["possible/possible","möglich"],
+ ["Ne t'en fais pas.","Mach dir nichts draus!"],
+ ["grave / grave","schlimm"],
+ ["Ne t'inquiète pas.","Mach dir keine Sorgen."],
+ ["essayer de faire qc","versuchen etw. zu tun"],
+ ["répéter qc","etw. wiederholen"],
+ ["Ça craint!","Das ist mies! / Das ist übel!"],
+ ["Ressembler à quelqu'un/quelque chose","jemandem/etwas ähnlich sein",["Ressembler à quelqu'un/quelque chose","ressembler à quelqu'un","ressembler à quelque chose","ressembler à qn","ressembler à qc","ressembler à"]],
+ ["confondre qc","etw. verwechseln"],
+ ["poli, polie","höflich"],
+ ["gentil/gentille","nett"],
+ ["Excusez-moi!","Verzeihung! Entschuldigen Sie!"],
+ ["il me faut qc = j'ai besoin de qc","ich brauche etwas"],
+ ["J'ai fait une grosse bêtise.","Ich habe eine große Dummheit gemacht."],
+ ["s'excuser","sich entschuldigen"],
+ ["fonctionner","funktionieren"],
+ ["se rendre utile","sich nützlich machen"],
+ ["C'est délicieux","Es ist köstlich."],
+ ["faire la vaisselle","abwaschen, den Abwasch machen"],
+ ["casser","kaputt machen, zerbrechen"],
+ ["tellement","so viel, dermaßen, besonders"],
+ ["je pourrais","ich könnte"],
+ ["la monnaie","das Wechselgeld, das Kleingeld"],
+ ["sonner","klingeln"],
+ ["occupé, occupée","besetzt, belegt, beschäftigt"],
+ ["sauf","außer"],
+ ["un casque","ein Schutzhelm"],
+ ["le plus beau, la plus belle","der schönste / die schönste / das schönste"],
+ ["une capitale","eine Hauptstadt"],
+ ["incroyable","unglaublich"],
+ ["revenir","zurückkommen"],
+ ["des hauts et des bas (m. pl.)","Höhen und Tiefen"],
+ ["noter qc","etw. aufschreiben/notieren"],
+ ["un carnet de voyage","ein Reisetagebuch"],
+ ["une balade","ein Spaziergang"],
+ ["manquer à qn","jdm fehlen"],
+ ["le meilleur, la meilleure","der/die/das beste"],
+ ["le monde","die Welt"],
+ ["typique","typisch"],
+ ["la province","die Provinz"],
+ ["un bol","eine Schale, eine Trinkschale"],
+ ["un savon","eine Seife"],
+ ["un/e partenaire d'échange","ein Austauschpartner, eine Austauschpartnerin",["un partenaire d'échange","une partenaire d'échange","un/e partenaire d'échange"]],
+ ["poster une annonce","eine Anzeige aufgeben"],
+ ["planifier qc","etw. planen"],
+ ["une rencontre virtuelle","virtuelles Treffen"],
+ ["une nouvelle connaissance","eine neue Bekanntschaft",["une nouvelle connaissance","une nouvelles connaissance"]],
+ ["être à l'aise","sich wohlfühlen, entspannt sein"],
+ ["être mal à l'aise","sich unwohl/unbehaglich fühlen"],
+ ["résoudre un problème","ein Problem lösen"],
+ ["améliorer qc","etw. verbessern"],
+ ["indépendant, indépendante","unabhängig"],
+ ["rester en contact","in Kontakt bleiben"],
+ ["une page d'accueil","eine Startseite"],
+ ["les actus (actualités)","Aktuelles",["les actus","les actualités","les actus (actualités)"]],
+ ["les infos pratiques","nützliche Infos"],
+ ["un forum","Diskussionsforum"],
+ ["télécharger qc","etw. herunterladen"]
+];
+const VOCAB=VRAW.map((r,i)=>({n:i+1,c:i<27?'t1':i<54?'t2':i<81?'t3':'t4',fr:r[0],de:r[1],a:r[2]}));
+
 function hash(s){let h=0;for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))|0}return 'e'+(h>>>0).toString(36)}
 EX.forEach(x=>{x.id=hash(x.t+x.q)});
+
+function variants(fr){
+  const out=new Set();
+  const base=fr.replace(/\s*\((?:f|m|f\.|m\.|m\. pl\.)\)\s*$/,'');
+  out.add(base);
+  base.split(/\s*=\s*/).forEach(alt=>{
+    alt.split(/\s*[\/,]\s*/).forEach(p=>{
+      p=p.trim();
+      if(!p)return;
+      out.add(p);
+      const m=p.match(/\((\w+)\)/);
+      if(m){out.add(p.replace(m[0],''));out.add(p.replace(m[0],m[1]))}
+      const q=p.replace(/\s+q[nc]$/,'');
+      if(q!==p)out.add(q);
+    });
+  });
+  return [...out].filter(Boolean);
+}
+const vid=w=>hash('voc'+w.fr);
+const VEX=VOCAB.map(w=>({
+  t:'voc',cat:w.c,type:'gap',
+  q:'Wie heißt „'+w.de+'“ auf Französisch? ___',
+  a:w.a||variants(w.fr),show:w.fr,e:w.de+' = '+w.fr,id:vid(w)
+}));
+function poolFor(topic,cat){
+  if(topic==='all')return EX;
+  if(topic==='voc')return VEX.filter(x=>!cat||cat==='all'||x.cat===cat);
+  return EX.filter(x=>x.t===topic);
+}
 
 /* ---------- Helfer ---------- */
 const $=(s,r=document)=>r.querySelector(s);
@@ -330,17 +622,23 @@ function h(tag,attrs,...kids){
   kids.flat().forEach(c=>{if(c!=null&&c!==false)n.append(c)});
   return n;
 }
+const btn=(label,fn,cls)=>h('button',{class:'btn'+(cls?' '+cls:''),type:'button',onclick:fn},label);
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 const norm=s=>s.toLowerCase().replace(/[’`´]/g,"'").replace(/\s+/g,' ').trim();
-const strip=s=>norm(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const cmp=s=>norm(s).replace(/[.,;:!?…]/g,'').replace(/\s+/g,' ').trim();
+const cmpStrip=s=>cmp(s).replace(/œ/g,'oe').normalize('NFD').replace(/[̀-ͯ]/g,'');
 function checkGap(ex,val){
-  const n=norm(val);
+  const n=cmp(val);
   if(!n)return 'empty';
-  if(ex.a.some(a=>norm(a)===n))return 'ok';
-  if(ex.a.some(a=>strip(a)===strip(val)))return 'accent';
+  if(ex.a.some(a=>cmp(a)===n))return 'ok';
+  if(ex.a.some(a=>cmpStrip(a)===cmpStrip(val)))return 'accent';
   return 'bad';
 }
-const correctText=ex=>ex.type==='gap'?ex.a[0]:ex.opts[ex.a];
+const correctText=ex=>ex.type==='gap'?(ex.show||ex.a[0]):ex.opts[ex.a];
+function filled(ex){
+  const c=correctText(ex);
+  return ex.q.includes('___')?ex.q.replace('___','«'+c+'»'):ex.q+' → '+c;
+}
 
 /* ---------- Fortschritt (nur lokal) ---------- */
 const KEY='fr8-mastered';
@@ -348,8 +646,101 @@ function loadMastered(){try{return new Set(JSON.parse(localStorage.getItem(KEY)|
 function saveMastered(){try{localStorage.setItem(KEY,JSON.stringify([...mastered]))}catch(e){}}
 let mastered=loadMastered();
 
+/* ---------- Spielmodus: XP, Level, Serien, Trophäen (nur lokal gespeichert) ---------- */
+const GKEY='fr8-game';
+const RANKS=['Neuankömmling','Austauschschüler','Gastkind','Brieffreund','Weltenbummler','Sprachprofi',"Maître de l'échange"];
+const BADGES=[
+  {id:'first',icon:'🎒',name:'Erste Reise',desc:'Beende deine erste Runde.'},
+  {id:'streak5',icon:'🔥',name:'Feuer & Flamme',desc:'5 richtige Antworten in Folge.'},
+  {id:'streak10',icon:'🚀',name:'Turbo',desc:'10 richtige Antworten in Folge.'},
+  {id:'perfect',icon:'🏆',name:'Parfait !',desc:'Eine Runde mit mindestens 5 Aufgaben ohne Fehler.'},
+  {id:'retry',icon:'🛠️',name:'Fehlerjäger',desc:'Löse eine „Fehler wiederholen“-Runde komplett richtig.'},
+  {id:'xp500',icon:'🌟',name:'Weltenbummler',desc:'Sammle 500 XP.'},
+  {id:'voc50',icon:'📖',name:'Vokabelheld',desc:'Meistere 50 Vokabeln.'},
+  {id:'gram30',icon:'💬',name:'Grammatik-Profi',desc:'Meistere 30 Grammatikaufgaben.'}
+];
+function loadGame(){
+  try{
+    const g=JSON.parse(localStorage.getItem(GKEY)||'{}');
+    return {xp:g.xp||0,best:g.best||0,rounds:g.rounds||0,badges:Array.isArray(g.badges)?g.badges:[]};
+  }catch(e){return {xp:0,best:0,rounds:0,badges:[]}}
+}
+function saveGame(){try{localStorage.setItem(GKEY,JSON.stringify(G))}catch(e){}}
+let G=loadGame();
+const levelOf=xp=>Math.floor(xp/100)+1;
+const rankOf=lv=>RANKS[Math.min(lv-1,RANKS.length-1)];
+function toast(icon,title,text){
+  const box=document.getElementById('toasts');
+  if(!box)return;
+  const t=h('div',{class:'toast'},
+    h('span',{class:'toast-icon','aria-hidden':'true'},icon),
+    h('div',null,h('strong',null,title),text?h('div',{class:'small'},text):null));
+  box.append(t);
+  setTimeout(()=>t.remove(),4200);
+}
+function awardBadges(ctx){
+  const gram=EX.filter(x=>mastered.has(x.id)).length;
+  const voc=VEX.filter(x=>mastered.has(x.id)).length;
+  const rules={
+    first:()=>!!ctx.roundDone,
+    streak5:()=>G.best>=5,
+    streak10:()=>G.best>=10,
+    perfect:()=>!!ctx.roundDone&&!!ctx.perfect&&ctx.total>=5,
+    retry:()=>!!ctx.roundDone&&!!ctx.retry&&!!ctx.perfect,
+    xp500:()=>G.xp>=500,
+    voc50:()=>voc>=50,
+    gram30:()=>gram>=30
+  };
+  BADGES.forEach(b=>{
+    if(!G.badges.includes(b.id)&&rules[b.id]()){
+      G.badges.push(b.id);
+      toast(b.icon,'Neue Trophäe: '+b.name,b.desc);
+    }
+  });
+  saveGame();
+}
+function addXp(n){
+  const before=levelOf(G.xp);
+  G.xp+=n;
+  const after=levelOf(G.xp);
+  if(after>before)toast('⬆️','Level '+after+' erreicht !','Neuer Rang: '+rankOf(after));
+}
+function hud(streak){
+  const lv=levelOf(G.xp);
+  return h('div',{class:'hud'},
+    h('span',{class:'hud-item'},'⭐ ',h('strong',null,String(G.xp)),' XP'),
+    h('span',{class:'hud-item'},rankOf(lv)+' · Level '+lv),
+    streak>=2?h('span',{class:'hud-item flame'},'🔥 ×'+streak):null,
+    h('div',{class:'progress hud-bar',role:'progressbar','aria-label':'Fortschritt bis zum nächsten Level','aria-valuemin':0,'aria-valuemax':100,'aria-valuenow':G.xp%100},
+      h('div',{style:'width:'+(G.xp%100)+'%'})));
+}
+function renderSetupHud(){
+  const b=$('#hud-setup');
+  if(b)b.replaceChildren(hud(0));
+}
+function renderGameCard(){
+  const box=$('#game-card');
+  if(!box)return;
+  box.replaceChildren();
+  const lv=levelOf(G.xp);
+  const grid=h('div',{class:'badges'});
+  BADGES.forEach(b=>{
+    const got=G.badges.includes(b.id);
+    grid.append(h('div',{class:'badge'+(got?' got':''),title:b.desc},
+      h('span',{class:'badge-icon','aria-hidden':'true'},got?b.icon:'🔒'),
+      h('strong',null,b.name),
+      h('span',{class:'small'},got?'Freigeschaltet':b.desc)));
+  });
+  box.append(h('div',{class:'card'},
+    h('h2',null,h('span',{class:'icon','aria-hidden':'true'},'🏅'),'Dein Reisepass'),
+    hud(0),
+    h('p',{class:'small'},`Noch ${100-G.xp%100} XP bis Level ${lv+1} · beste Serie: ${G.best} · Runden: ${G.rounds}`),
+    grid));
+}
+
 /* ---------- Navigation ---------- */
-const VIEWS=['home','spickzettel','ueben'];
+const VIEWS=['home','spickzettel','vokabeln','ueben','test'];
+let TEST=null;
 function route(){
   let v=location.hash.slice(1);
   if(!VIEWS.includes(v))v='home';
@@ -359,30 +750,42 @@ function route(){
     if(x===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
   });
   if(v==='home')renderHome();
+  if(v==='ueben')renderSetupHud();
+  if(v==='test'&&!TEST)buildTest();
 }
 window.addEventListener('hashchange',()=>{route();window.scrollTo(0,0)});
 
 /* ---------- Übersicht ---------- */
+const cfg={topic:'all',count:10};
 function goPractice(topic){
   cfg.topic=topic;renderChips();
+  $('#quiz').hidden=true;$('#setup').hidden=false;
   if(location.hash==='#ueben'){route()}else{location.hash='#ueben'}
 }
 function renderHome(){
+  renderGameCard();
   const box=$('#topic-cards');box.replaceChildren();
-  Object.keys(TOPICS).forEach(k=>{
-    const total=EX.filter(x=>x.t===k).length;
-    const done=EX.filter(x=>x.t===k&&mastered.has(x.id)).length;
+  ['obj','comp','sup','voc'].forEach(k=>{
+    const pool=k==='voc'?VEX:EX.filter(x=>x.t===k);
+    const total=pool.length;
+    const done=pool.filter(x=>mastered.has(x.id)).length;
+    const buttons=k==='voc'
+      ?[btn('Karteikarten',()=>{location.hash='#vokabeln'},'primary'),btn('Schreibtest',()=>startVocabTest('all'))]
+      :[btn('Üben',()=>goPractice(k),'primary'),btn('Spickzettel',()=>{location.hash='#spickzettel';setTimeout(()=>jump('cs-'+k),40)})];
     box.append(h('div',{class:'card topic-card','data-topic':k},
-      h('h3',null,TOPICS[k].name),
+      h('h3',null,h('span',{class:'icon','aria-hidden':'true'},ICONS[k]),TOPICS[k].name),
       h('p',null,TOPICS[k].teaser),
       h('div',{class:'progress',role:'progressbar','aria-valuemin':0,'aria-valuemax':total,'aria-valuenow':done,'aria-label':'Gemeistert: '+TOPICS[k].name},
         h('div',{style:'width:'+(total?done/total*100:0)+'%'})),
-      h('p',{class:'small'},`${done} von ${total} Aufgaben gemeistert`),
-      h('div',{class:'btns'},
-        h('button',{class:'btn primary',type:'button',onclick:()=>goPractice(k)},'Üben'),
-        h('button',{class:'btn',type:'button',onclick:()=>{location.hash='#spickzettel';setTimeout(()=>jump('cs-'+k),30)}},'Spickzettel'))
+      h('p',{class:'small'},`${done} von ${total} gemeistert`),
+      h('div',{class:'btns'},buttons)
     ));
   });
+  box.append(h('div',{class:'card topic-card','data-topic':'test'},
+    h('h3',null,h('span',{class:'icon','aria-hidden':'true'},ICONS.test),'Lernzielkontrolle'),
+    h('p',null,'Ausdruckbarer Test mit Lösungsblatt und Selbsteinschätzung. Jede Version ist neu gemischt.'),
+    h('div',{class:'btns'},btn('Zum Test',()=>{location.hash='#test'},'red'))
+  ));
 }
 $('#home-all').addEventListener('click',()=>goPractice('all'));
 
@@ -391,12 +794,88 @@ function jump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({
 $$('[data-jump]').forEach(b=>b.addEventListener('click',()=>jump(b.dataset.jump)));
 $('#print-btn').addEventListener('click',()=>window.print());
 
+/* ---------- Vokabeln: Einstellungen, Wortliste, Karteikarten ---------- */
+const vcfg={cat:'all',dir:'fr'};
+function renderVChips(){
+  const c=$('#chips-vcat');
+  c.replaceChildren(h('legend',null,'Thema'));
+  [['all','Alle'],...Object.keys(CATS).map(k=>[k,CATS[k]])].forEach(([k,label])=>{
+    c.append(h('button',{class:'chip',type:'button','aria-pressed':String(vcfg.cat===k),onclick:()=>{vcfg.cat=k;renderVChips()}},label));
+  });
+  const d=$('#chips-vdir');
+  d.replaceChildren(h('legend',null,'Karteikarten: Richtung'));
+  [['fr','Französisch → Deutsch'],['de','Deutsch → Französisch']].forEach(([k,label])=>{
+    d.append(h('button',{class:'chip',type:'button','aria-pressed':String(vcfg.dir===k),onclick:()=>{vcfg.dir=k;renderVChips()}},label));
+  });
+}
+function renderWordlist(){
+  const box=$('#wordlist');box.replaceChildren();
+  Object.keys(CATS).forEach(k=>{
+    const rows=VOCAB.filter(w=>w.c===k).map(w=>h('tr',null,h('td',null,String(w.n)),h('td',{lang:'fr'},w.fr),h('td',null,w.de)));
+    box.append(h('div',{class:'card','data-topic':'voc'},
+      h('h2',null,'Wortliste: '+CATS[k]),
+      h('div',{class:'scroll'},h('table',{class:'tbl'},
+        h('thead',null,h('tr',null,h('th',null,'Nr.'),h('th',null,'Français'),h('th',null,'Deutsch'))),
+        h('tbody',null,rows)))
+    ));
+  });
+}
+let V=null;
+$('#vstart-cards').addEventListener('click',()=>{
+  const pool=VOCAB.filter(w=>vcfg.cat==='all'||w.c===vcfg.cat);
+  V={queue:shuffle(pool),total:pool.length,known:0,again:0,flipped:false,dir:vcfg.dir};
+  $('#v-setup').hidden=true;$('#v-run').hidden=false;
+  renderCard();window.scrollTo(0,0);
+});
+$('#vstart-test').addEventListener('click',()=>startVocabTest(vcfg.cat));
+function endCards(){$('#v-run').hidden=true;$('#v-setup').hidden=false;window.scrollTo(0,0)}
+function markCard(ok){
+  const w=V.queue[0],id=vid(w);
+  if(ok){V.known++;V.queue.shift();mastered.add(id);addXp(3);awardBadges({})}
+  else{V.again++;V.queue.push(V.queue.shift());mastered.delete(id)}
+  saveMastered();V.flipped=false;renderCard();
+}
+function renderCard(){
+  const box=$('#v-run');box.replaceChildren();
+  if(!V.queue.length){
+    box.append(
+      h('div',{class:'center'},
+        h('div',{class:'burst',style:'--s:170px'},h('span',null,'Bravo !')),
+        h('p',null,`Alle ${V.total} Karten gewusst. Du hast ${V.again} Mal „Nochmal“ gedrückt.`)),
+      h('div',{class:'btns'},btn('Neue Runde',endCards,'primary'),btn('Schreibtest',()=>startVocabTest(vcfg.cat),'red'))
+    );
+    return;
+  }
+  const w=V.queue[0];
+  const front=V.dir==='fr'?w.fr:w.de,back=V.dir==='fr'?w.de:w.fr;
+  const fl=V.dir==='fr'?'fr':'de',bl=V.dir==='fr'?'de':'fr';
+  const label=V.flipped?(V.dir==='fr'?'Deutsch':'Français'):(V.dir==='fr'?'Français':'Deutsch');
+  const flash=h('button',{class:'flash'+(V.flipped?' flipped':''),type:'button','aria-label':'Karte umdrehen',onclick:()=>{V.flipped=!V.flipped;renderCard()}},
+    h('span',{class:'small-label'},label),
+    h('span',{lang:V.flipped?bl:fl},V.flipped?back:front));
+  box.append(
+    h('div',{class:'q-head'},h('span',{class:'tag'},CATS[w.c]),h('span',{class:'count'},`${V.known} von ${V.total} gewusst`)),
+    h('div',{class:'progress'},h('div',{style:'width:'+(V.known/V.total*100)+'%'})),
+    flash,
+    V.flipped
+      ?h('div',{class:'btns'},btn('✗ Nochmal',()=>markCard(false),'red'),btn('✓ Gewusst',()=>markCard(true),'primary'))
+      :h('p',{class:'small'},'Tippe auf die Karte, um sie umzudrehen.'),
+    h('div',{class:'btns'},btn('Beenden',endCards))
+  );
+  const focusEl=V.flipped?$('.btn.primary',box):flash;
+  if(focusEl)focusEl.focus();
+}
+function startVocabTest(cat){
+  cfg.topic='voc';renderChips();
+  location.hash='#ueben';
+  startSession(poolFor('voc',cat),cfg.count);
+}
+
 /* ---------- Üben: Einstellungen ---------- */
-const cfg={topic:'all',count:10};
 function renderChips(){
   const t=$('#chips-topic');
   t.replaceChildren(h('legend',null,'Thema'));
-  [['all','Alles gemischt'],...Object.keys(TOPICS).map(k=>[k,TOPICS[k].name])].forEach(([k,label])=>{
+  [['all','Grammatik gemischt'],['obj',TOPICS.obj.name],['comp',TOPICS.comp.name],['sup',TOPICS.sup.name],['voc',TOPICS.voc.name]].forEach(([k,label])=>{
     t.append(h('button',{class:'chip',type:'button','aria-pressed':String(cfg.topic===k),onclick:()=>{cfg.topic=k;renderChips()}},label));
   });
   const c=$('#chips-count');
@@ -406,16 +885,15 @@ function renderChips(){
   });
 }
 $('#start-btn').addEventListener('click',()=>{
-  const pool=EX.filter(x=>cfg.topic==='all'||x.t===cfg.topic);
-  startSession(pool,cfg.count);
+  startSession(poolFor(cfg.topic,'all'),cfg.count);
 });
 
 /* ---------- Üben: Ablauf ---------- */
 let S=null;
-function startSession(pool,count){
+function startSession(pool,count,opts){
   let q=shuffle(pool);
   if(count&&q.length>count)q=q.slice(0,count);
-  S={queue:q,i:0,results:[],done:false};
+  S={queue:q,i:0,results:[],done:false,xp:0,streak:0,maxStreak:0,retry:!!(opts&&opts.retry)};
   $('#setup').hidden=true;
   $('#quiz').hidden=false;
   renderQuestion();
@@ -423,7 +901,7 @@ function startSession(pool,count){
 }
 function questionLine(ex){
   const parts=ex.q.split('___');
-  const line=h('p',{class:'question',lang:ex.type==='mc'&&!ex.q.includes('___')&&/^[A-ZÄÖÜ][^.]*(sieht|ist|Das|der|Welcher)/.test(ex.q)?'de':'fr'});
+  const line=h('p',{class:'question',lang:ex.t==='voc'?'de':null});
   const out=[];
   parts.forEach((p,i)=>{
     out.push(p);
@@ -439,15 +917,16 @@ function questionLine(ex){
   return line;
 }
 function renderQuestion(){
-  const ex=S.queue[S.i];S.done=false;S.retry=false;
+  const ex=S.queue[S.i];S.done=false;
   const box=$('#quiz');box.replaceChildren();
   box.setAttribute('data-topic',ex.t);
   box.append(
+    hud(S.streak),
     h('div',{class:'q-head'},
       h('span',{class:'tag'},TOPICS[ex.t].name),
       ex.bonus?h('span',{class:'tag bonus'},'⭐ Bonus'):null,
       h('span',{class:'count'},`Aufgabe ${S.i+1} von ${S.queue.length}`)),
-    h('div',{class:'progress',style:'--c:var(--blue)'},h('div',{style:'width:'+(S.i/S.queue.length*100)+'%'}))
+    h('div',{class:'progress'},h('div',{style:'width:'+(S.i/S.queue.length*100)+'%'}))
   );
   box.append(questionLine(ex));
   const fb=h('div',{id:'fb',role:'status','aria-live':'polite'});
@@ -457,8 +936,8 @@ function renderQuestion(){
     opts.forEach(o=>{
       const b=h('button',{class:'opt',type:'button',onclick:()=>{
         if(S.done)return;
-        $$('.opt',wrap).forEach(x=>{x.disabled=true;});
         $$('.opt',wrap).forEach(x=>{
+          x.disabled=true;
           const op=opts.find(p=>p.text===x.textContent);
           if(op&&op.ok)x.classList.add('correct');
         });
@@ -479,8 +958,7 @@ function renderQuestion(){
         inp.focus();inp.setSelectionRange(s+1,s+1);
       }},ch));
     });
-    const check=h('button',{class:'btn primary',type:'button',id:'check-btn',onclick:()=>submitGap(ex)},'Prüfen');
-    box.append(chars,h('div',{class:'btns'},check));
+    box.append(chars,h('div',{class:'btns'},h('button',{class:'btn primary',type:'button',id:'check-btn',onclick:()=>submitGap(ex)},'Prüfen')));
     input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitGap(ex)}});
     setTimeout(()=>input.focus(),0);
   }
@@ -493,7 +971,7 @@ function submitGap(ex){
   const fb=$('#fb');
   if(r==='empty'){fb.replaceChildren(h('div',{class:'fb info'},h('p',null,'Schreibe zuerst deine Antwort in die Lücke.')));input.focus();return}
   if(r==='accent'){
-    fb.replaceChildren(h('div',{class:'fb info'},h('p',null,'Fast! Achte auf die Akzente und probiere es noch einmal.')));
+    fb.replaceChildren(h('div',{class:'fb info'},h('p',null,'Fast ! Achte auf die Akzente und probiere es noch einmal.')));
     input.focus();return;
   }
   input.disabled=true;$('#check-btn').disabled=true;
@@ -505,57 +983,174 @@ function finish(ex,given,ok){
   S.results.push({ex,given,ok});
   if(ok)mastered.add(ex.id);else mastered.delete(ex.id);
   saveMastered();
+  let gain=0;
+  if(ok){
+    S.streak++;
+    S.maxStreak=Math.max(S.maxStreak,S.streak);
+    gain=10+Math.min(S.streak-1,5)*2+(ex.bonus?10:0);
+    S.xp+=gain;
+    if(S.streak>G.best)G.best=S.streak;
+    addXp(gain);
+  }else{
+    S.streak=0;
+  }
+  awardBadges({});
   const last=S.i===S.queue.length-1;
-  const fb=$('#fb');
-  fb.replaceChildren(h('div',{class:'fb '+(ok?'ok':'no')},
-    h('p',null,h('strong',null,ok?'✓ Richtig !':'✗ Leider falsch.')),
+  const SFX=['POW !','BAM !','ZOOM !','BRAVO !'];
+  $('#fb').replaceChildren(h('div',{class:'fb '+(ok?'ok':'no')},
+    h('p',{class:'verdict'},ok?'✓ Parfait !':'✗ Zut !',
+      ok?h('span',{class:'sfx'},S.streak>=3?'Combo ×'+S.streak:SFX[Math.floor(Math.random()*SFX.length)]):null,
+      ok?h('span',{class:'xp-pop'},'+'+gain+' XP'):null),
     ok?null:h('p',{lang:'fr'},h('span',{lang:'de'},'Richtig wäre: '),h('strong',null,correctText(ex))),
     h('p',{lang:'de'},ex.e),
     h('div',{class:'btns'},h('button',{class:'btn primary',type:'button',id:'next-btn',onclick:next},last?'Ergebnis anzeigen':'Weiter →'))
   ));
+  const oldHud=$('.hud',$('#quiz'));
+  if(oldHud)oldHud.replaceWith(hud(S.streak));
   $('#next-btn').focus();
 }
 function next(){
   if(S.i<S.queue.length-1){S.i++;renderQuestion()}else{renderResult()}
-}
-function filled(ex){
-  const c=correctText(ex);
-  return ex.q.includes('___')?ex.q.replace('___','«'+c+'»'):ex.q+' → '+c;
 }
 function renderResult(){
   const box=$('#quiz');box.replaceChildren();box.removeAttribute('data-topic');
   const total=S.results.length,ok=S.results.filter(r=>r.ok).length;
   const wrong=S.results.filter(r=>!r.ok);
   const pct=Math.round(ok/total*100);
+  const stars=pct>=90?3:pct>=70?2:pct>=50?1:0;
+  const roundBonus=stars*10;
+  G.rounds++;
+  if(roundBonus){addXp(roundBonus);S.xp+=roundBonus}
+  awardBadges({roundDone:true,perfect:wrong.length===0,total,retry:S.retry});
   const msg=pct===100?'Parfait ! Alles richtig.':pct>=75?'Très bien ! Fast geschafft.':pct>=50?'Ça va. Schau dir die Fehler noch einmal an.':'Bleib dran. Lies den Spickzettel und versuche es noch einmal.';
-  box.append(h('h2',null,'Ergebnis'),h('div',{class:'score'},`${ok} / ${total}`),h('p',null,msg));
+  box.append(
+    h('h2',null,'Ergebnis'),
+    h('div',{class:'center'},h('div',{class:'burst',style:'--s:170px'},h('span',{class:'score'},`${ok}/${total}`))),
+    h('p',{class:'stars center','aria-label':stars+' von 3 Sternen'},'★'.repeat(stars)+'☆'.repeat(3-stars)),
+    h('p',{class:'center'},msg),
+    h('p',{class:'center'},`⭐ +${S.xp} XP in dieser Runde · 🔥 längste Serie: ${S.maxStreak}`+(roundBonus?` (inkl. ${roundBonus} XP Rundenbonus)`:'')),
+    hud(0));
   if(wrong.length){
     box.append(h('h3',null,'Das solltest du dir noch einmal ansehen'));
     wrong.forEach(r=>{
       box.append(h('div',{class:'err-item'},
         h('div',{class:'small'},TOPICS[r.ex.t].name),
-        h('div',{lang:'fr'},filled(r.ex)),
-        h('div',{class:'small',lang:'de'},'Deine Antwort: '+r.given+' – '+r.ex.e)));
+        h('div',null,filled(r.ex)),
+        h('div',{class:'small'},'Deine Antwort: '+r.given+' – '+r.ex.e)));
     });
   }
   const btns=h('div',{class:'btns'});
-  if(wrong.length)btns.append(h('button',{class:'btn primary',type:'button',onclick:()=>startSession(wrong.map(r=>r.ex),0)},'Fehler wiederholen'));
+  if(wrong.length)btns.append(btn('Fehler wiederholen',()=>startSession(wrong.map(r=>r.ex),0,{retry:true}),'primary'));
   btns.append(
-    h('button',{class:'btn'+(wrong.length?'':' primary'),type:'button',onclick:()=>{$('#quiz').hidden=true;$('#setup').hidden=false;window.scrollTo(0,0)}},'Neue Runde'),
+    btn('Neue Runde',()=>{$('#quiz').hidden=true;$('#setup').hidden=false;renderSetupHud();window.scrollTo(0,0)},wrong.length?'':'primary'),
     h('a',{class:'btn',href:'#spickzettel'},'Spickzettel'),
     h('a',{class:'btn',href:'#home'},'Übersicht'));
   box.append(btns);
 }
 
+/* ---------- Lernzielkontrolle ---------- */
+function fillBlank(q,long){
+  const parts=q.split('___'),out=[];
+  parts.forEach((t,i)=>{
+    out.push(t);
+    if(i<parts.length-1)out.push(h('span',{class:'wline'+(long?' long':'')}));
+  });
+  return out;
+}
+function buildTest(){
+  const parts=[];
+  [['obj','A'],['comp','B'],['sup','C']].forEach(([t,letter])=>{
+    const pool=EX.filter(x=>x.t===t&&!x.bonus);
+    const mc=shuffle(pool.filter(x=>x.type==='mc')).slice(0,3).map(x=>({...x,shown:shuffle(x.opts.map((text,i)=>({text,ok:i===x.a})))}));
+    const gp=shuffle(pool.filter(x=>x.type==='gap')).slice(0,3);
+    parts.push({letter,name:TOPICS[t].name,items:[...mc,...gp]});
+  });
+  const testable=w=>w.fr.length<=26&&!/[!?]|\.$/.test(w.fr);
+  const pickV=c=>shuffle(VOCAB.filter(w=>w.c===c&&testable(w))).slice(0,2);
+  parts.push({letter:'D',name:'Wortschatz',vocab:shuffle([...pickV('t1'),...pickV('t2'),...pickV('t3'),...pickV('t4')])});
+  TEST=parts;
+  renderTest();
+}
+function renderTest(){
+  const sheet=$('#test-sheet'),sol=$('#test-solution');
+  sheet.replaceChildren();sol.replaceChildren();
+  const total=TEST.reduce((n,p)=>n+(p.items?p.items.length:p.vocab.length),0);
+  const field=label=>h('span',{class:'field'},label+':',h('span',{class:'wline long'}));
+  sheet.append(h('div',{class:'sheet-head'},
+    h('h2',null,"Lernzielkontrolle Français – L'échange scolaire"),
+    h('p',null,'Objektpronomen · Komparativ · Superlativ · Wortschatz'),
+    h('div',{class:'fields'},field('Name'),field('Klasse'),field('Datum')),
+    h('p',{class:'small'},`Zeit: ca. 25 Minuten · Pro richtige Antwort 1 Punkt · Gesamt: ____ / ${total}`)));
+  sol.append(h('div',{class:'sheet-head'},
+    h('h2',null,'Lösungen – Lernzielkontrolle Français'),
+    h('p',{class:'small'},`Für die Lehrkraft · ${total} Punkte insgesamt`)));
+
+  TEST.forEach(p=>{
+    const n=p.items?p.items.length:p.vocab.length;
+    const title=()=>h('h3',{class:'part-title'},h('span',null,`${p.letter}  ${p.name}`),h('span',{class:'pts'},`____ / ${n}`));
+    const ol=h('ol',{class:'items'}),solOl=h('ol',{class:'items'});
+    let instr,body,solBody;
+    if(p.items){
+      instr='Kreuze die richtige Lösung an oder setze das fehlende Wort ein.';
+      p.items.forEach(x=>{
+        const li=h('li',null,h('div',null,...fillBlank(x.q,x.type==='gap')));
+        if(x.type==='mc')li.append(h('div',{class:'mc-opts'},x.shown.map(o=>h('span',{class:'tbox'},'☐ '+o.text))));
+        ol.append(li);
+        solOl.append(h('li',null,h('div',null,filled(x)),h('div',{class:'small'},x.e)));
+      });
+      body=ol;solBody=solOl;
+    }else{
+      instr='Schreibe die französische Vokabel auf (Nomen mit Artikel, Verben im Infinitiv).';
+      const tbody=h('tbody');
+      p.vocab.forEach((w,i)=>{
+        tbody.append(h('tr',null,h('td',null,`${p.letter}${i+1}. ${w.de}`),h('td',{class:'write'})));
+        solOl.append(h('li',null,w.de+' → ',h('strong',null,w.fr)));
+      });
+      body=h('table',{class:'tbl vtable'},h('thead',null,h('tr',null,h('th',null,'Deutsch'),h('th',null,'Français'))),tbody);
+      solBody=solOl;
+    }
+    sheet.append(h('div',{class:'test-part'},title(),h('p',{class:'small'},instr),body));
+    sol.append(h('div',{class:'test-part'},h('h3',{class:'part-title'},h('span',null,`${p.letter}  ${p.name}`),h('span',{class:'pts'},`${n} P.`)),solBody));
+  });
+
+  const goals=[
+    'Ich kann Objektpronomen (le, la, les, lui, leur) auswählen und an die richtige Stelle setzen.',
+    'Ich kann mit plus / aussi / moins … que vergleichen.',
+    'Ich kann meilleur und mieux richtig verwenden.',
+    'Ich kann Superlative bilden und das Adjektiv richtig stellen.',
+    'Ich kenne die Vokabeln dieser Einheit.'
+  ];
+  const rows=goals.map(g=>h('tr',null,h('td',null,g),h('td',{class:'box'},'☐'),h('td',{class:'box'},'☐'),h('td',{class:'box'},'☐')));
+  sheet.append(h('div',{class:'test-part selfcheck'},
+    h('h3',{class:'part-title'},h('span',null,'Selbsteinschätzung')),
+    h('table',{class:'tbl'},
+      h('thead',null,h('tr',null,h('th',null,'Das kann ich …'),h('th',null,'sicher'),h('th',null,'fast'),h('th',null,'noch üben'))),
+      h('tbody',null,rows))));
+}
+function printMode(cls){document.body.classList.add(cls);window.print()}
+window.addEventListener('afterprint',()=>document.body.classList.remove('print-solution'));
+$('#t-new').addEventListener('click',buildTest);
+$('#t-print').addEventListener('click',()=>{document.body.classList.remove('print-solution');window.print()});
+$('#t-print-sol').addEventListener('click',()=>printMode('print-solution'));
+$('#t-sol-toggle').addEventListener('click',()=>{
+  const s=$('#test-solution');
+  const hidden=s.classList.toggle('sol-hidden');
+  $('#t-sol-toggle').textContent=hidden?'Lösungen anzeigen':'Lösungen ausblenden';
+});
+
 /* ---------- Zurücksetzen ---------- */
 $('#reset-btn').addEventListener('click',()=>{
-  if(confirm('Gespeicherten Fortschritt auf diesem Gerät löschen?')){
-    mastered=new Set();saveMastered();renderHome();
+  if(confirm('Fortschritt, XP und Trophäen auf diesem Gerät löschen?')){
+    mastered=new Set();saveMastered();
+    G={xp:0,best:0,rounds:0,badges:[]};saveGame();
+    renderHome();
   }
 });
 
 /* ---------- Start ---------- */
 renderChips();
+renderVChips();
+renderWordlist();
 route();
 })();
 </script>
